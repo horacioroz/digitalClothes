@@ -1,0 +1,46 @@
+
+.header{
+    width:100%;
+    height:25vh;
+    display: flex;
+}
+.header-in{
+    display: inline-flex;
+    align-content:stretch;
+    justify-content: space-between;
+}
+.header h1{
+    color:brown;
+}
+#logo{
+    width: 30%;
+    height: 25vh;
+}
+#login{
+    width:50%;
+    height:22vh;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+
+}
+#login a{
+     text-decoration: none;
+     font-family: arial;
+     color: black;
+}
+#search{
+display: inline-flex;
+    align-items: center;
+
+}
+#search button{
+    width: 20%;
+}
+#search input{
+    width: 70%;
+}
+.glyphicon{
+    background: #000;
+}

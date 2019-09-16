@@ -1,0 +1,17 @@
+@import url('header.css');
+@import url('body.css');
+@import url('nav.css');
+@import url('footer.css');
+
+*{
+    width:100%;
+    /*height:auto;*/
+
+}
+#title{
+    display: none;
+}
+h1{
+    font-size: 3em;
+    color: red;
+}

@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+}
+.body{
+    height: 50vh;
+    width: 100%;
+    position: relative;
+}
+.body h2{
+    border:solid red 1px;
+
+}
