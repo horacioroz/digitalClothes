@@ -1,0 +1,137 @@
+.shp_container{
+    padding: 2%;
+    display: flex;
+}
+.shp_main{
+    display: flex;
+    justify-content: space-around;
+}
+.shp_left{
+    display: flex;
+    height: 20vh;
+    border: solid 0.05em #434343;
+    margin-right: 0;
+
+}
+.shp_art{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.shp_art img{
+    width: 10%;
+    height: 10vh;
+
+}
+.shp_art_desc{
+    width: 30%;
+    font-size: 0.5em
+}
+.shp_art_desc{
+    line-height: 0.05em;
+}
+.shp_art_name{
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1em;
+}
+.shp_quant{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+.shp_quantity{
+    width: 15%;
+    text-align: center;
+    margin-right: 3em;
+}
+.shp_price{
+    width:10%;
+}
+.shp_price_offer{
+    font-weight: bold;
+}
+.shp_price_regular{
+    text-decoration-style: overline;
+}
+.shp_price_save{
+    color:red;
+
+}
+.shp_right{
+    display: flex;
+    height: auto;
+    /*justify-content: flex-end;*/
+    /*padding: 2%;*/
+    flex-direction: column;
+}
+.shp_right_square{
+    display: flex;
+    height: auto;
+    /*justify-content: flex-end;*/
+    padding: 4%;
+    border: solid 0.05em #434343;
+
+}
+.shp_total_amount p{
+    display: flex;
+    justify-content: flex-end;
+}
+.shp_total_subtot {
+    font-weight: bold;
+    font-size: .9em;
+}
+.shp_total_ship{
+    font-size: 0.7em;
+    padding-top: 10%;
+}
+.shp_total_ship_desc{
+    font-size: 0.6em;
+    color:green;
+}
+.shp_total_tax{
+    font-size: 0.9em;
+}
+.shp_total_saves{
+    color:red;
+    font-size: 0.7em;
+    padding-top: 10%;
+}
+.shp_total_estimated{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.shp_checkout_btn{
+    color: white;
+    background: black;
+    height: 10vh;
+    justify-content: center;
+    position: relative;
+    align-items: flex-end;
+    margin-top: 3vh;
+
+}
+.shp_checkout_btn p{
+    text-align: center;
+    padding-top: 1em;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    .shp_main{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .shp_right{
+        margin-top: 3%;
+    }
+    .shp_price{
+        width: 10%;
+    }
+    .shp_quantity{
+        margin-right: 0.5em;
+    }
+    .shp_art img{
+        height: auto;
+    }
+
+}

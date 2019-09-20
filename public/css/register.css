@@ -1,0 +1,110 @@
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.maincontainer-register {
+  text-align: center;
+}
+.maincontainer-register h1{
+    color:black;
+}
+.form-group {
+  margin-top: 3%;
+  width: 20%;
+}
+
+.container-register{
+  margin-top: 5%;
+
+}
+
+.group2-register{
+display: flex;
+}
+
+ .maincontainer-register label {
+  font-family: 'Teko', sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+}
+
+.placeholder-register {
+  font-size: 1.1vw;
+}
+ .maincontainer-register input[type=text] , input[type=password] , input[type=email] {
+
+  border: 0;
+  border-bottom: solid black 1px;
+  border-radius: 0;
+
+}
+
+.btn-register {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+    border-radius: 0;
+    margin-bottom: 1%;
+    margin-top: 4%;
+    width: 40%;
+  }
+
+.btn-register:hover {
+  background-color: grey ;
+}
+
+.btn-register:active {
+  background-color: black;
+  color: white;
+}
+
+.login-register{
+  color: black;
+  background-color: white;
+  margin-left: 2%;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.login-register:hover {
+  color: gray;
+  text-decoration:underline;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+
+  .group2-register{
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 50%;
+
+
+  }
+
+  .placeholder-register {
+    font-size: 0.7em;
+  }
+
+ .maincontainer-register label {
+    font-size: 1.3rem;
+  }
+
+
+
+}
+
+@media (max-width: 320px){
+  .confirmpass-register {
+    font-size: 1.1em;
+  }
+    .placeholder-register {
+    font-size: 0.5em;
+  }
+
+}

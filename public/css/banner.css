@@ -1,0 +1,35 @@
+.banner-banner{
+  margin: 0;
+  height: 70vh;
+  background-image: url(../images/DCBanner.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-top:2%;
+  width:100%;
+}
+
+.text-banner {
+color: white;
+text-align: center;
+font-family: 'Manjari', sans-serif;
+}
+
+.title-banner{
+  display: inline-block;
+  padding: 1%;
+  margin-top: 8%;
+  border: 5px solid white;
+  border-radius: 0;
+}
+
+.text-banner h1{
+  margin-bottom: 2%;
+}
+
+.text-banner h1:hover{
+background-color:rgba(255,255,255, 0.3);
+}
+
+.text-banner h4{
+  font-size: 1.2rem;
+}

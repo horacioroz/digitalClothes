@@ -1,0 +1,54 @@
+body {
+
+    background-image: url(../img/fondo_profile.jpg);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 2%;
+    font-family: monospace;
+    justify-content: center;
+    text-decoration: none;
+}
+.user_profile_photo{
+    margin-top: 40px;
+    border-radius: 50%;
+}
+
+.container{
+    margin-top: 10px;
+    margin: auto;
+    border-radius: 7%;
+    background-color: rgba(0,0,0,0.4);
+    width: 40%;
+    height: 700px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+}
+li {  
+
+    text-decoration: none;
+    border: 1px solid grey;
+    text-align: center;
+    width: 90%;
+    height: 40px;
+    background-color: white;
+    margin-bottom: 10px;
+        
+    }
+    @media(max-width:600px){
+        body{
+            width: 100%;
+
+        }
+       .user_profile_photo{
+            display: block;
+        }
+        .container{
+            width: 100%;
+        }
+     
+        }
+        
+    }
+}

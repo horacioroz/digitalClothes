@@ -11,7 +11,6 @@
   display:block;
   position: relative;
   height: 5vh;
-  /*z-index: 1;*/
 }
 #nav-bar a{
   box-sizing: border-box;
@@ -25,7 +24,7 @@
   /*font-weight: bold;*/
   justify-content: center;
   text-decoration: none;
-  transition: background 0.4s;
+  // transition: background 0.4s;
   cursor:pointer;
 
 }
