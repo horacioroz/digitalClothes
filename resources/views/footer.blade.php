@@ -67,6 +67,7 @@
         <ul>
             <li><a href="{{url('login')}}" class="footer-item">Login</a></li>
             <li><a href="{{url('signup')}}" class="footer-item">Register</a></li>
+            <li><a href="{{url('profile')}}" class="footer-item">Profile</a></li>
         </ul>
     </article>
     <article class="col-6 col-lg-2 footer-links "><p>Rewards</p>

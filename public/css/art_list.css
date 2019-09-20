@@ -10,18 +10,20 @@
 }
 
 .jm_lista_vista {
-flex: 0 0 75%;
-max-width: 75%;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-background-color: ;
+    flex: 0 0 75%;
+    max-width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: ;
 }
 
 .jm_filtros_vista {
-flex: 0 0 25%;
-max-width: 25%;
+    flex: 0 0 15%;
+    max-width: 20%;
+    margin-left: 0;
+
 }
 
 .jm_lista_vista article {
@@ -33,7 +35,7 @@ max-width: 25%;
 }
 
 .jm_lista_vista article:hover {
-border: 1px solid  lightgray ;
+    border: 1px solid  lightgray ;
 }
 
 .carousel-item{
@@ -42,7 +44,7 @@ border: 1px solid  lightgray ;
 }
 
 .jm_lista_vista_slider {
-width: 99%;
+    width: 99%;
 }
 
 .jm_lista_vista_slider img {
@@ -95,7 +97,7 @@ width: 99%;
     background-color: white;
     border-radius: .25rem;
     margin-top: 2%;
-  }
+}
 
 .breadcrumb-item a , li{
   color: black;
@@ -121,18 +123,21 @@ width: 99%;
 }
 
 .jm_titulo_vista {
-text-align: center;
+    text-align: center;
 }
 
-.jm_pags_vista ul li {
-  display: inline-block ;
+.jm_pags_vista {
+  display:flex ;
+  height: 5vh;
+  /*flex-direction: row;*/
 }
-
-.jm_pags_vista ul li a  {
-  color: black;
-  font-size: 1.2rem;
+.pages a{
+  color:black;
+    flex-direction: row;
 }
-
+.fa-arrow-left{
+    color: black;
+}
 @media only screen and (max-width: 768px) {
 
   .jm_lista_vista {
@@ -140,11 +145,11 @@ text-align: center;
     justify-content: center;
     margin: auto;
 
-  }
+}
 
-  .jm_lista_vista article{
+.jm_lista_vista article{
     display: inline-block;
     width: 50%;
     justify-content: center;
-  }
+}
 }

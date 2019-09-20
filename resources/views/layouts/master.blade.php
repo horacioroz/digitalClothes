@@ -9,7 +9,7 @@
 
         @include('header')
         @include('navprueba')
-        <div class="container" style="width:100%;padding:0;margin:0 auto;">
+        <div class="container col-12" style="width:100%;padding:0;margin:0 auto;">
             @yield('content')
 
         </div>

@@ -49,13 +49,21 @@
         </div>
       </li>
       <li class="nav-item dropdown">
+        <a class="nav-link " href="{{url('art_list')}}" id="navbarMenuLink" >
+          Product List
+        </a>
+      </li>
+
+      <li class="nav-item dropdown">
         <a class="nav-link " href="{{url('faq')}}" id="navbarMenuLink" >
           FaQ
         </a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link " href="{{url('contact')}}" id="navbarMenuLink" >
           Contact Us
         </a>
+    </li>
     </ul>
   </div>
 </nav>

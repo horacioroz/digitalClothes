@@ -1,11 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
 
-@extends('layouts.master')
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="masterscss/user_profile.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
         <h1>Datos del usuario</h1>
     <div class="user_profile_container">
-
+        
         <section class="user_profile">
-
+                
             <div class="user_profile_gr">
                 <article class="user_profile_form_datos">
                     <p class="nombre">Nombre:</p>
@@ -36,10 +45,14 @@
                    </article>
              </div>
              <div class="user_profile_avatar">
-                <img src="{{ asset('images/profile.jpg')}}" alt="imagen avatar">
+                <img src="img/profile.png" alt="imagen avatar">
             </div>
 
 
         </section>
     </div>
- @endsection
+    
+    
+</body>
+
+</html>

@@ -39,7 +39,8 @@
 }
 .carousel-item {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    margin-right: 0;
+    width: 30%;
 
 }
 .carousel-item a img{
