@@ -1,6 +1,7 @@
 
 @extends('layouts.master')
 @section('content')
+<div class="art-view-global">
 <div class="breadcrumbmain-art-view">
     <nav aria-label="breadcrumb row ">
         <ol class="breadcrumb-art-view">
@@ -47,5 +48,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
