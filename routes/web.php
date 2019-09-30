@@ -34,10 +34,21 @@ Route::get('/login', function(){
 
     return view('login');
 });
+Route::post('/login', function(){
+
+    return view('login');
+});
+
 Route::get('/signup', function(){
 
     return view('register');
 });
+Route::post('/signup', function(){
+
+    return view('register');
+});
+
+
 Route::get('/art_list', function(){
 
     return view('art_list');
@@ -54,3 +65,12 @@ Route::get('/faq', function(){
 
     return view('faq');
 });
+Route::post('/signup', 'RegisterController@validar');
+
+Route::post('/signup', 'RegisterController@crearRegistro');
+
+Route::post('/signup', 'RegisterController@guardarRegistro');
+
+Route::post('/signup', 'RegisterController@redirectLogin');
+
+Route::post('login', [ 'as' => 'login', 'uses' => 'RegisterController@redirectLogin']);
