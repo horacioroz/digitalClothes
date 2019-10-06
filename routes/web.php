@@ -39,9 +39,9 @@ Route::post('/login', function(){
     return view('login');
 });
 
-Route::get('signup', function(){
+Route::get('/signup', function(){
 
-    return view('register');
+    return view('auth/register');
 });
 
 Route::get('/art_list', function(){
@@ -63,6 +63,11 @@ Route::get('/faq', function(){
 
 
 Route::post('signup', [ 'as' => 'signup', 'uses' => 'RegisterController@signup']);
+Route::post('signup', [ 'as' => 'signup', 'uses' => 'RegisterController@store']);
 
 
 
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

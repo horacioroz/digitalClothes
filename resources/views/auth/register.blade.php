@@ -19,7 +19,7 @@
 <div class="maincontainer-register">
     <h1>Create an account</h1>
     <div class="col-12 col-md-8 container-register ">
-        <form class="form " action="signup" novalidate method="POST">
+        <form class="form " action="{{ route('signup') }}" novalidate method="POST">{{-- saque del action singup --}}
             {!!csrf_field()!!}
             <div class="group2-register row">
                 <div class="form-group">

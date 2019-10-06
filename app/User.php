@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;//agregado
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable
 {
@@ -15,8 +17,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $connection = 'mysql';//agregado
+    protected $primaryKey = 'id';//agregado
+    protected $table = 'users';//agregado
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstName', 'lastName', 'email', 'password',
     ];
 
     /**
