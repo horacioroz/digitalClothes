@@ -30,19 +30,20 @@ Route::get('/profile', function(){
 
     return view('user_profile');
 });
-Route::get('/login', function(){
+// Route::get('/login', function(){
 
-    return view('login');
-});
-Route::post('/login', function(){
+//     return view('auth/login');
+// });
+// Route::post('/login', function(){
 
-    return view('login');
-});
+//     return view('login');
+// });
 
-Route::get('/signup', function(){
+// Route::get('signup', function(){
 
-    return view('auth/register');
-});
+//     return view('auth/register');
+// });
+
 
 Route::get('/art_list', function(){
 
@@ -62,12 +63,19 @@ Route::get('/faq', function(){
 });
 
 
-Route::post('signup', [ 'as' => 'signup', 'uses' => 'RegisterController@signup']);
-Route::post('signup', [ 'as' => 'signup', 'uses' => 'RegisterController@store']);
+//Route::post('signup', 'RegisterController@signup')->name('signup');
+// Route::post('signup', [ 'as' => 'signup', 'uses' => 'RegisterController@signup']);
+
+// Route::post('signup', [ 'as' => 'signup', 'uses' => 'RegisterController@store']);
+//Route::post('/login', [ 'as' => 'login', 'uses' => 'LoginController']);
 
 
 
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

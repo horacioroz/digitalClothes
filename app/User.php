@@ -17,9 +17,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $connection = 'mysql';//agregado
-    protected $primaryKey = 'id';//agregado
-    protected $table = 'users';//agregado
+    // protected $connection = 'mysql';//agregado
+    // protected $primaryKey = 'id';//agregado
+    // protected $table = 'users';//agregado
     protected $fillable = [
         'firstName', 'lastName', 'email', 'password',
     ];
