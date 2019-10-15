@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 //use Illuminate\Http\View;
@@ -41,9 +41,12 @@ protected $request;
 // }
 
 public function signup(Request $request) {
+        //echo "Está en singup";
+//exit;
 
     $request->all(); //trae los datos del formulario
-
+//echo $request;
+//exit;
     $this->validate($request,
         ['firstName'=>'required',
         'lastName'=>'required',
@@ -62,36 +65,35 @@ public function signup(Request $request) {
         ]
      );
     return $request;
-}
+
       /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\User
      */
-
-
- protected function create($request)
-    {
-        return User::create([
-            'firstName' => $request['firstName'],
-            'lastName' => $request['lastName'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
-    }
-
-    protected function store()
-    {
-        $user = new User;
-        $user->firstName = request()->firstName;
-        $user->lastName = request()->lastName;
-        $user->email = request()->email;
-        $user->email_verified_at = request()->email_verified_at;
-        $user->password = encrypt(request()->password);
-        //$user->_token = request()->_token;
-        $user->save();
-    }
+}
+      function create($request)
+        {
+            return User::create([
+                'firstName' => $request['firstName'],
+                'lastName' => $request['lastName'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+            ]);
+            $user->save();
+        }
+      // function store()
+      //   {
+      //       $user = new User;
+      //       $user->firstName = request()->firstName;
+      //       $user->lastName = request()->lastName;
+      //       $user->email = request()->email;
+      //       $user->email_verified_at = request()->email_verified_at;
+      //       $user->password = encrypt(request()->password);
+      //       //$user->_token = request()->_token;
+      //       $user->save();
+      //   }
 
 
 // public function show(){
