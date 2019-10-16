@@ -73,27 +73,29 @@ public function signup(Request $request) {
      * @return \App\User
      */
 }
-      function create($request)
-        {
-            return User::create([
-                'firstName' => $request['firstName'],
-                'lastName' => $request['lastName'],
-                'email' => $request['email'],
-                'password' => Hash::make($request['password']),
-            ]);
-            $user->save();
-        }
-      // function store()
+      // function create($request)
       //   {
-      //       $user = new User;
-      //       $user->firstName = request()->firstName;
-      //       $user->lastName = request()->lastName;
-      //       $user->email = request()->email;
-      //       $user->email_verified_at = request()->email_verified_at;
-      //       $user->password = encrypt(request()->password);
-      //       //$user->_token = request()->_token;
+      //       return User::create([
+      //           'firstName' => $request['firstName'],
+      //           'lastName' => $request['lastName'],
+      //           'email' => $request['email'],
+      //           'password' => Hash::make($request['password']),
+      //       ]);
       //       $user->save();
       //   }
+      function store()
+        {
+            $user = new User;
+            $user->firstName = request()->firstName;
+            $user->lastName = request()->lastName;
+            $user->email = request()->email;
+            $user->email_verified_at = request()->email_verified_at;
+            $user->password = encrypt(request()->password);
+            //$user->_token = request()->_token;
+            $user->save();
+
+            return redirect('/login');
+        }
 
 
 // public function show(){
