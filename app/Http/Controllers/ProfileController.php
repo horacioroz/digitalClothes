@@ -10,13 +10,7 @@ class ProfileController extends Controller
 {
    public function user(User $user)
     {
-        function get_id(Request $request){
-        $route = $request->route();
-        $uri_path = $route->getPath();
-        $uri_parts = explode('/', $uri_path);
-        $uri_tail = end($uri_parts);
-            return $uri_tail;
-    }
+
 
         $id= get_id();
         //$id = $user->get('id')[0][($user->{'id'})->get()];

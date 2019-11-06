@@ -14,8 +14,7 @@
 Route::get('/home', function () {return view('home');});
 Route::get('/shpCrt', function(){return view('shoppingCart');});
 Route::get('/artic', function(){return view('art-view');});
-Route::get('/contact', function(){return view('form_contact');});
-Route::get('/profile', function(){return view('user_profile');});;
+//Route::get('/profile', function(){return view('user_profile');});;
 //Route::get('/users_list', function(){return view('users_list');});
 Route::get('/login', function(){return view('login');});
 Route::post('/login', function(){return view('login');});
@@ -25,11 +24,13 @@ Route::get('/chpsw', function(){return view('changepassword');});
 Route::get('/chpswconf', function(){return view('changePasswordConfirm');});
 Route::get('/faq', function(){return view('faq');});
 
+
+Route::get('/logout','UserController@logout');
 Route::get('/users_list', [ 'as' => 'users_list', 'uses' => 'UserController@index']);
 Route::post('/signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@signup']);
 Route::post('signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@store']);
-//Route::get('/profile/{id}', ['as' => 'id','uses' => 'ProfileController@user']);
+Route::get('user_profile/{id}',['as' => 'profile', 'uses' => 'UserController@userProfile']);
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('/home');

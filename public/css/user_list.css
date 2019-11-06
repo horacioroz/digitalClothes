@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+}
+.user_list_titles{
+    width: 75%;
+    background-color: black;
+    color:white;
+    display: flex;
+    height: 2%;
+
+}
+.user_list_titles p{
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 1.5em;
+    margin: 0 0.5em;
+}
+.user_list_row{
+    width: 70%;
+    margin:auto;
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    align-items: flex-start;
+}
+.user_list_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0em;
+    height:1%;
+
+}

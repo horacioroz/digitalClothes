@@ -17,6 +17,10 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 50);
             $table->string('description', 100);
+            $table->double('price')->nullable();
+            $table->double('discount_%')->nullable();
+            $table->integer('color_id')->nullable();
+            $table->integer('size_id')->nullable();
             $table->timestamps();
         });
     }

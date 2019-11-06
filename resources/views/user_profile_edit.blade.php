@@ -37,8 +37,7 @@
                    </article>
              </div>
              <div class="user_profile_avatar">
-                <img src="images/profile.png" alt="imagen avatar">
-                {{-- {{Auth::user()->storage/avatar}} --}}
+                <img src="images/profile.jpg" alt="imagen avatar">{{-- {{Auth::user()->storage/avatar}} --}}
             </div>
 
 

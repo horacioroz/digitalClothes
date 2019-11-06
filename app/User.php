@@ -21,7 +21,7 @@ class User extends Authenticatable
     protected $primaryKey = 'id';//agregado
     protected $table = 'users';//agregado
     protected $fillable = [
-        'firstName', 'lastName', 'email', 'password',
+        'firstName', 'lastName', 'email', 'password', 'avatar', 'phone', 'address', 'city', 'postal',
     ];
 
     /**
