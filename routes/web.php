@@ -25,11 +25,13 @@ Route::get('/chpswconf', function(){return view('changePasswordConfirm');});
 Route::get('/faq', function(){return view('faq');});
 
 
-Route::get('/logout','UserController@logout');
+Route::post('/logout', 'UserController@logout');
 Route::get('/users_list', [ 'as' => 'users_list', 'uses' => 'UserController@index']);
 Route::post('/signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@signup']);
 Route::post('signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@store']);
 Route::get('user_profile/{id}',['as' => 'profile', 'uses' => 'UserController@userProfile']);
+Route::get('user_profile_edit/{id}','UserController@userEdit')->name('profile_edit');
+Route::put("user_profile_edit/{id}",'UserController@userUpdate')->name('profile_update');
 
 Auth::routes();
 

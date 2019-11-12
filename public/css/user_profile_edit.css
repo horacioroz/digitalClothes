@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+.form-user-edit{
+    display:flex;
+    flex-wrap: wrap;
+}
 
 .maincontainer-register {
   text-align: center;
@@ -10,56 +14,45 @@
 .maincontainer-register h1{
     color:black;
 }
-.form-group {
-  margin-top: 3%;
+.form-group-edit{
+  margin-top: 0%;
   width: 30%;
 }
-
-.container-register{
-  margin-top: 5%;
-
+.container-register-edit{
+  margin-top: 2 %;
 }
-
 .group2-register{
 display: flex;
 }
-
  .maincontainer-register label {
   font-family: 'Teko', sans-serif;
   font-weight: lighter;
   font-size: 1.3rem;
 }
-
 .placeholder-register {
   font-size: 1.1vw;
 }
 .maincontainer-register input[type=text] , input[type=password] , input[type=email] {
-
   border: 0;
   border-bottom: solid black 1px;
   border-radius: 0;
-
 }
-
 .btn-register {
     color: #fff;
     background-color: black;
     border-color: black;
     border-radius: 0;
     margin-bottom: 1%;
-    margin-top: 4%;
+    margin-top: 2%;
     width: 40%;
   }
-
 .btn-register:hover {
   background-color: grey ;
 }
-
 .btn-register:active {
   background-color: black;
   color: white;
 }
-
 .login-register{
   color: black;
   background-color: white;
@@ -67,15 +60,13 @@ display: flex;
   text-align: center;
   margin-top: 2%;
 }
-
 .login-register:hover {
   color: gray;
   text-decoration:underline;
-
 }
 .form-check{
-    width: 10em;
-    display: inline-table;
+    width: 8em;
+    // display:
 }
 .form-check-input{
     align-self: left;
@@ -92,7 +83,7 @@ display: flex;
     flex-direction: column;
   }
 
-  .form-group {
+  .form-group-edit{
     width: 50%;
 
 

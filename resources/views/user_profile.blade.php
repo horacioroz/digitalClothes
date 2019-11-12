@@ -1,6 +1,7 @@
 
 @extends('layouts.master')
 @section('content')
+
         <h1>Datos del usuario : </h1>
     <div class="user_profile_container">
 
@@ -29,16 +30,12 @@
                 </article>
             </div>
             <div class="user_profile_botton">
-                   <article class="user_profile_btn_editar">
-                   <p>Editar</p>
-                   </article>
-                   <article class="user_profile_btn_salvar">
-                   <p>Salvar</p>
+                    <article class="user_profile_btn_editar">
+                        <a href="{{ route('profile_edit', $user) }}">Editar</a>
                    </article>
              </div>
              <div class="user_profile_avatar">
-                <img src="images/profile.png" alt="imagen avatar">
-                {{-- {{Auth::user()->storage/avatar}} --}}
+                <img src="{{url('storage', $user->avatar)}}" alt="imagen avatar">
             </div>
 
 

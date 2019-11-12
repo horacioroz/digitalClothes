@@ -36,4 +36,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    protected function salir(){
+        dd('Llegue hasta acá');
+        Auth::logout();
+        redirectTo();
+    }
 }

@@ -26,9 +26,32 @@ class UserController extends Controller
         return view('user_profile')->with('user', $user) ;
     }
     public function logout() {
+        dd('Hasta acá llegué');
         // Session::flush();
         // return Redirect::to('home');
         Auth::logout();
-        return redirect('/home');
+        return redirect()->route('/home');
+        //return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/home');
     }
+    public function userEdit(User $id){
+         $users = User::all();
+         $user = User::findOrFail($id);
+           //dd($user);
+        //  return $user->user;
+        return view('user_profile_edit')->with('user', $id) ;
+    }
+    public function userUpdate( Request $request){
+        //dd($request->all());
+        //$users = User::all();
+        $user = User::findOrFail($request->id);
+        //$user = new User;
+        //$user = $request;
+        //$user->fill($request->all());
+        //dd($id);
+        $user->update($request->all());
+        dd('llegue');
+
+        return redirect()->route('profile', $user->id);
+    }
+
 }
