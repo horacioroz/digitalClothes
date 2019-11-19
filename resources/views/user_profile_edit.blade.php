@@ -59,7 +59,7 @@
                {{-- Debe haber una api de códigos postales después de saber provincia y ciudad --}}
             <div class="form-group-edit ">
                 <div class="user_profile_avatar">
-                <img src="{{url('storage', $user->avatar)}}" alt="imagen avatar">
+                <img src="{{url('storage/images/users', $user->avatar)}}" alt="imagen avatar">
                 </div>
             </div>
         </div>

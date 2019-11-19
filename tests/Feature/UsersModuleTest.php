@@ -20,6 +20,7 @@ class UsersModuleTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
+        //$user = User::findOrFail($request->id);
         $user = factory(User::class)->create();
 
         $response = $this->get("user_profile/{$user->id}");

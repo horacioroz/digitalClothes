@@ -32,6 +32,12 @@ Route::post('signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@sto
 Route::get('user_profile/{id}',['as' => 'profile', 'uses' => 'UserController@userProfile']);
 Route::get('user_profile_edit/{id}','UserController@userEdit')->name('profile_edit');
 Route::put("user_profile_edit/{id}",'UserController@userUpdate')->name('profile_update');
+Route::get('/product_list', [ 'as' => 'product_list', 'uses' => 'ProductController@index']);
+Route::get('/category_list', [ 'as' => 'category_list', 'uses' => 'CategoryController@index']);
+
+Route::get("category_edit/{id}",'CategoryController@edit')->name('category_edit');
+//Route::get("category_edit/{id}",[ 'as' => 'category_edit', 'uses' => 'CategoryController@edit']);
+Route::put("category_edit/{id}",'CategoryController@update')->name('category_update');
 
 Auth::routes();
 

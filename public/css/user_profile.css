@@ -1,78 +1,195 @@
-.user_profile_container {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+/*// .user_profile_container {
+//     box-sizing: border-box;
+//     padding: 0;
+//     margin: 0;
+// }
+// .user_profile {
+//     display: flex;
+//     background-color: black;
+//     color: white;
+//     justify-content: space-between;
+// }
+// .user_profile_gr {
+//     display: flex;
+//     width: 100%;
+//     height: 60vh;
+//     padding: 2%;
+//     justify-content: flex-start;
+// }
+// .user_profile_form_datos {
+//     width: 15%;
+//    height: 60vh;
+// }
+// .user_profile_datos {
+//     width: 35%;
+//     height: 60vh;
+// }
+// .user_profile_form_datos p {
+//     text-align: center;
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     background-color: white;
+//     color: black;
+//     width: 75%;
+//     height: 10%;
+//     text-align: justify;
+// }
+// .user_profile_datos p {
+//     background-color: white;
+//     color: black;
+//     width: 130%;
+//     height: 10%;
+//     text-align: center;
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     text-align: justify;
+// }
+// .user_profile_botton {
+//     position: absolute;
+//     width: 20%;
+//     margin-left: 70%;
+//     margin-top: 1%;
+//     padding: 10px;
+// }
+// .user_profile_btn_editar {
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     padding: auto;
+//     text-align: center;
+//     width: 80%;
+//     height: 7vh;
+//     background-color: grey;
+//     color: white;
+// }
+// .user_profile_btn_salvar {
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     text-align: center;
+//     width: 80%;
+//     height: 7vh;
+//     background-color: grey;
+//     color:white;
+// }
+// .user_profile_btn_salvar p {
+//     margin-bottom: 35px;
+// }
+// .user_profile_avatar {
+//     width: 40%;
+//     margin-top: 13%;
+// }
+// .user_profile_avatar img{
+//     border-radius: 100%;
+// }*/
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
-.user_profile {
-    display: flex;
+.form-user-edit{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.maincontainer-register {
+  text-align: center;
+}
+.maincontainer-register h1{
+    color:black;
+}
+.form-group-edit{
+  margin-top: 0%;
+  width: 30%;
+}
+.container-register-edit{
+  margin-top: 2 %;
+}
+.group2-register{
+display: flex;
+}
+ .maincontainer-register p.title {
+  font-family: 'Teko', sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+}
+.placeholder-register {
+  font-size: 1.1vw;
+}
+.maincontainer-register p.data {
+  border: 0;
+  border-bottom: solid black 1px;
+  border-radius: 0;
+}
+.btn-register {
+    color: #fff;
     background-color: black;
-    color: white;
-    justify-content: space-between;
-}
-.user_profile_gr {
-    display: flex;
-    width: 100%;
-    height: 60vh;
-    padding: 2%;
-    justify-content: flex-start;
-}
-.user_profile_form_datos {
-    width: 15%;
-   height: 60vh;
-}
-.user_profile_datos {
-    width: 35%;
-    height: 60vh;
-}
-.user_profile_form_datos p {
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: white;
-    color: black;
-    width: 75%;
-    height: 10%;
-    text-align: justify;
-}
-.user_profile_datos p {
-    background-color: white;
-    color: black;
-    width: 130%;
-    height: 10%;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: justify;
-}
-.user_profile_botton {
-    position: absolute;
-    width: 20%;
-    margin-left: 70%;
-    margin-top: 1%;
-    padding: 10px;
-}
-.user_profile_btn_editar {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: auto;
-    text-align: center;
-    width: 80%;
-    height: 7vh;
-    background-color: grey;
-    color: white;
-}
-.user_profile_btn_salvar {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    width: 80%;
-    height: 7vh;
-    background-color: grey;
-    color:white;
-}
-.user_profile_btn_salvar p {
-    margin-bottom: 35px;
-}
-.user_profile_avatar {
+    border-color: black;
+    border-radius: 0;
+    margin-bottom: 1%;
+    margin-top: 2%;
     width: 40%;
-    margin-top: 13%;
+  }
+.btn-register:hover {
+  background-color: grey ;
+}
+.btn-register:active {
+  background-color: black;
+  color: white;
+}
+.login-register{
+  color: black;
+  background-color: white;
+  margin-left: 2%;
+  text-align: center;
+  margin-top: 2%;
+}
+.login-register:hover {
+  color: gray;
+  text-decoration:underline;
+}
+.form-check{
+    width: 8em;
+    // display:
+}
+.form-check-input{
+    align-self: left;
+    position: relative;
+}
+.form-check-label{
+    width: 5em;
+    display: inline-table;
 }
 .user_profile_avatar img{
     border-radius: 100%;
+    width: 60%;
+    margin-top: 13%;
+}
+@media only screen and (max-width: 768px) {
+
+
+  .group2-register{
+    flex-direction: column;
+  }
+
+  .form-group-edit{
+    width: 50%;
+
+
+  }
+
+  .placeholder-register {
+    font-size: 0.7em;
+  }
+
+ .maincontainer-register label {
+    font-size: 1.3rem;
+  }
+
+
+
+}
+
+@media (max-width: 320px){
+  .confirmpass-register {
+    font-size: 1.1em;
+  }
+    .placeholder-register {
+    font-size: 0.5em;
+  }
+
 }

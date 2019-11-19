@@ -2,10 +2,11 @@ h1{
     text-align: center;
 }
 .user_list_titles{
-    width: 75%;
+    width: 55%;
     background-color: black;
     color:white;
     display: flex;
+    /*justify-content: center;*/
     height: 2%;
 
 }
@@ -16,18 +17,70 @@ h1{
     margin: 0 0.5em;
 }
 .user_list_row{
-    width: 70%;
+    width: 50%;
     margin:auto;
     display: flex;
     margin-top: 0.5em;
     margin-bottom: 0em;
     align-items: flex-start;
 }
-.user_list_item {
+.category_list_item {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 0em;
+    margin: 0 0.5em;
     height:1%;
+    color:black;
+    align-items: center;
+}
+.category_list_item i{
+    display: flex;
+    justify-content: center;
+}
+.category_add{
+    color:black;
+    display: flex;
+    padding-top: 1vh;
+    width: 20%;
 
 }
+.category_add:hover{
+    color:grey;
+    text-decoration: none;
+}
+.category-search{
+    color: #fff;
+    background-color: black;
+    border-color: black;
+    border-radius: 0;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    width: 10%;
+}
+.category-search:hover{
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+.category-search-box{
+    width: 30%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+
+}
+.category-search-group{
+    display: flex;
+    width: 70%;
+    margin:auto;
+    justify-content: space-around;
+}
+.category-search-form{
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin:auto;
+    display:flex;
+    width: 70%;
+    height: 2%;
+
+}
+

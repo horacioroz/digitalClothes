@@ -1,44 +1,49 @@
 
 @extends('layouts.master')
 @section('content')
-
+<div class="maincontainer-register">
         <h1>Datos del usuario : </h1>
-    <div class="user_profile_container">
-
-        <section class="user_profile">
-
-            <div class="user_profile_gr">
-                <article class="user_profile_form_datos">
-                    <p class="nombre">Nombre:</p>
-                    <p class="apellido">Apellido:</p>
-                    <p class="mail">Mail:</p>
-                    <p class="telefono">Telefono:</p>
-                    <p class="direccion">Direccion :</p>
-                    <p class="ciudad">Ciudad</p>
-                    <p class="codigopostal">Codigo postal:</p>
-                </article>
-                <article class="user_profile_datos">
-
-                    <p class="nombre">{{Auth::user()->firstName}}</p>
-                    <p class="apellido">{{Auth::user()->lastName}}</p>
-                    <p class="mail">{{Auth::user()->email}}</p>
-                    <p class="telefono">{{Auth::user()->phone}}</p>
-                    <p class="direccion">{{Auth::user()->address}}</p>
-                    <p class="ciudad">{{Auth::user()->city}}</p>
-                    <p class="codigopostal">{{Auth::user()->postal}}</p>
-
-                </article>
-            </div>
+        <div class="col-12 col-md-8 container-register-edit ">
+            <div class="form-user-edit">
+                <div class="form-group-edit">
+                    <p class="title">Nombre:</p>
+                    <p class="data">{{Auth::user()->firstName}}</p>
+                </div>
+                <div class="form-group-edit">
+                    <p class="title">Apellido:</p>
+                    <p class="data">{{Auth::user()->lastName}}</p>
+                </div>
+                <div class="form-group-edit">
+                    <p class="title">Mail:</p>
+                    <p class="data">{{Auth::user()->email}}</p>
+                </div>
+                <div class="form-group-edit">
+                    <p class="title">Telefono:</p>
+                    <p class="data">{{Auth::user()->phone}}</p>
+                </div>
+                <div class="form-group-edit">
+                    <p class="title">Direccion :</p>
+                    <p class="data">{{Auth::user()->address}}</p>
+                </div>
+                <div class="form-group-edit">
+                    <p class="title">Ciudad</p>
+                    <p class="data">{{Auth::user()->city}}</p>
+                </div>
+                <div class="form-group-edit">
+                    <p class="title">Codigo postal:</p>
+                    <p class="data">{{Auth::user()->postal}}</p>
+                </div>
+             <div class="form-group-edit">
+                 <div class="user_profile_avatar">
+                    <img src="{{url('storage/images/users', $user->avatar)}}" alt="imagen avatar">
+                </div>
+        </div>
+        </div>
+     </div>
             <div class="user_profile_botton">
-                    <article class="user_profile_btn_editar">
+                    <article class=" btn btn-register">
                         <a href="{{ route('profile_edit', $user) }}">Editar</a>
                    </article>
              </div>
-             <div class="user_profile_avatar">
-                <img src="{{url('storage', $user->avatar)}}" alt="imagen avatar">
-            </div>
-
-
-        </section>
     </div>
  @endsection
