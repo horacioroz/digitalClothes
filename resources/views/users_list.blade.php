@@ -18,6 +18,7 @@
             <p class="user_list_item">{{$user->lastName}}</p>
             <p class="user_list_item">{{$user->email}}</p>
         </li>
+        <hr>
         @empty
         <li>No hay usuarios registrados.</li>
         @endforelse

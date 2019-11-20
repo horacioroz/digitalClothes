@@ -18,6 +18,13 @@
             </div>
             <button class=" btn btn-register " type="submit" >Guardar</button>
         </form>
+        <div class="category-search-group">
+            <form action="/category_search" method="GET" class="category-search-form">
+                <input type="text" class="category-search-box" name="busqueda">
+                <input type="submit" class="category-search"    value="Buscar">
+                <a href="{{url('category_create')}}" class="category_add"><i class="fas fa-upload">     Agregar Categoría</i></a>
+            </form>
+        </div>
     </div>
 </div>
 @endsection

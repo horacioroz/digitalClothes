@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,11 +24,11 @@ class UserController extends Controller
     }
 
     public function logout() {
-        dd('Hasta acá llegué');
+        // dd('Hasta acá llegué');
         // Session::flush();
         // return Redirect::to('home');
         Auth::logout();
-        return redirect()->route('/home');
+        return redirect()->to('/home');
         //return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/home');
     }
 

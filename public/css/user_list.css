@@ -24,6 +24,32 @@ h1{
     margin-bottom: 0em;
     align-items: flex-start;
 }
+.user_list_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0.5em;
+    height:1%;
+    color:black;
+    align-items: center;
+}
+
+.category_list_row{
+    width: 50%;
+    margin:auto;
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    align-items: flex-start;
+}
+hr{
+ width: 50%;
+    margin:auto;
+    display: flex;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    align-items: flex-start;
+}
 .category_list_item {
     display: flex;
     flex-direction: row;
@@ -83,4 +109,29 @@ h1{
     height: 2%;
 
 }
+.categoty_list_link{
+  color: black;
+  background-color: white;
+  margin-left: 2%;
+  text-align: center;
+  margin-top: 2%;
+}
+.categoty_list_link:hover {
+  color: grey;
+  text-decoration:underline;
+}
+.category_form_footer{
+    display: flex;
+    flex-direction: column;
+}
+.category_list_item_not_active{
+    color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0.5em;
+    height:1%;
+    align-items: center;
+}
+
 

@@ -20,13 +20,13 @@ class UsersModuleTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        //$user = User::findOrFail($request->id);
+        // $user = User::findOrFail($user->id);
         $user = factory(User::class)->create();
 
-        $response = $this->get("user_profile/{$user->id}");
+        $response = $this->get($user);
 
-        $response->assertStatus(200)
-                 ->assertSee('user_profile');
+        $response->assertStatus(200);
+                 //->assertSee('first_name');
     }
 
 //  function it_updates_a_user(){

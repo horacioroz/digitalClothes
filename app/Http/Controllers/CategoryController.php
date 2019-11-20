@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Alert;
 
 class CategoryController extends Controller
 {
@@ -24,9 +26,16 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+            $request->all();
+            $this->validate($request,
+                ['category_name'=>'required'],
+                ['category_name.required'=>'Debe ingresar el Nombre']);
+            $category = new Category($request->all());
+            $category->save();
+
+            return redirect('category_create');
     }
 
     /**
@@ -35,9 +44,8 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
     }
 
     /**
@@ -73,15 +81,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request)
     {
-
-        //dd($request->id);
-        // $categories = Category::all();
         $category = Category::findOrFail($request->id);
         $category->category_name =  $request->get('categoryName');
-
-        //dd($request->categoryName);
-        //dd($category);
-       // $category->update();
         $category->save();
 
         return redirect()->route('category_list');
@@ -93,23 +94,22 @@ class CategoryController extends Controller
      * @param  \App\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(Request $request)
     {
-        //
-    }
+        //echo 'Está a punto de eliminar esta categoría, está seguro de querer hacerlo ?';
+        //echo '';
+        $category = Category::findOrFail($request->id);
+        $category->fill(['active' => 0]);
+        $category->save();
+        // dd($category);
+        // DB::table('categories')
+        // ->where('id', $category->id)
+        // ->update(['active' => $category]);
+
+        //SweetAlertController::solicitudRealizada('Categoria desactivada');
+        return redirect()->route('category_list');
+        }
+
+
 }
 
-
-    // public function userUpdate( Request $request){
-    //     //dd($request->all());
-    //     //$users = User::all();
-    //     $user = User::findOrFail($request->id);
-    //     //$user = new User;
-    //     //$user = $request;
-    //     //$user->fill($request->all());
-    //     //dd($id);
-    //     $user->update($request->all());
-    //     //dd('llegue');
-
-    //     return redirect()->route('profile', $user->id);
-    // }
