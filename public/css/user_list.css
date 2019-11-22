@@ -59,6 +59,9 @@ hr{
     color:black;
     align-items: center;
 }
+.id{
+    width: 15%;
+}
 .category_list_item i{
     display: flex;
     justify-content: center;

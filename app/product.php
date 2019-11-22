@@ -3,13 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Category;
 
-class product extends Model
+
+class Product extends Model
 
 {
-    protected $fillable = ['name', 'description', 'category', 'prod_img', 'color', 'size', 'price', 'discount_porcet','active'];
+    protected $fillable = ['name', 'description', 'category_id', 'prod_img', 'color', 'size', 'price', 'discount_porcet','active'];
 
     public function category(){
-        return $this->belongsTo("App/category","category_id");
+        return $this->belongsTo("App\Category","id");
     }
 }

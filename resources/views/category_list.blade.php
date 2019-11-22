@@ -3,9 +3,10 @@
 @section('content')
 <h1>{{ $title }}</h1>
 <div class="user_list_titles">
-    <p>Id</p>
-    <p>Categoría</p>
+    <p class="id">Id</p>
+    <p >Categoría</p>
     <p>Editar</p>
+    <p>Activar</p>
     <p>Eliminar</p>
 </div>
     <ul>
@@ -14,19 +15,19 @@
         @if($value->active == 1)
         <li class="category_list_row">
 
-            <p class="category_list_item">{{$value->id}}</p>
+            <p class="category_list_item id">{{$value->id}}</p>
             <p class="category_list_item">{{$value->category_name}}</p>
             <a href="{{ url('category_edit',$value->id) }}" class="category_list_item"><i class="fas fa-edit"></i></a>
-            <a href="{{ url('category_active',$value->id) }}" class="category_list_item"><i class="as fa-trash-restore-alt"></i></a>
+            <a href="{{ url('category_active',$value->id) }}" class="category_list_item"><i class="fas fa-trash-restore-alt"></i></a>
             <a href="{{url('category_destroy',$value->id)}}" class="category_list_item"><i class="fas fa-trash-alt"></i></a>
         </li>
         <hr>
         @else
         <li class="category_list_row">
-            <p class="category_list_item_not_active">{{$value->id}}</p>
+            <p class="category_list_item_not_active id">{{$value->id}}</p>
             <p class="category_list_item_not_active">{{$value->category_name}}</p>
             <a href="{{ url('category_edit',$value->id) }}" class="category_list_item"><i class="fas fa-edit"></i></a>
-            <a href="{{ url('category_active',$value->id) }}" class="category_list_item"><i class="as fa-trash-restore-alt"></i></a>
+            <a href="{{ url('category_active',$value->id) }}" class="category_list_item"><i class="fas fa-trash-restore-alt"></i></a>
             <a href="{{url('category_destroy',$value->id)}}" class="category_list_item"><i class="fas fa-trash-alt"></i></a>
         </li>
         <hr>

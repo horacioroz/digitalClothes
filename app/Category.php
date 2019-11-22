@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Product;
 
-class category extends Model
+class Category extends Model
 {
     protected $fillable = ['category_name', 'active'];
 
     public function product(){
-        return $this->hasMany("App/product", "category_id");
+        return $this->hasMany("App\Product", "category_id");
     }
 }

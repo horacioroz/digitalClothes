@@ -37,7 +37,7 @@ Route::put("user_profile_edit/{id}",'UserController@userUpdate')->name('profile_
 Route::get('/product_list', [ 'as' => 'product_list', 'uses' => 'ProductController@index']);
 Route::get('/category_list', [ 'as' => 'category_list', 'uses' => 'CategoryController@index']);
 Route::get('category_destroy/{id}', 'CategoryController@destroy')->name('category_destroy');
-
+Route::get('category_active/{id}', 'CategoryController@active')->name('category_active');
 Route::get("category_edit/{id}",'CategoryController@edit')->name('category_edit');
 //Route::get("category_edit/{id}",[ 'as' => 'category_edit', 'uses' => 'CategoryController@edit']);
 Route::put("category_edit/{id}",'CategoryController@update')->name('category_update');

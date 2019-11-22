@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
+
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -61,18 +63,18 @@ class ProductController extends Controller
 
     }
 
-    public function userUpdate( Request $request){
-        //dd($request->all());
-        //$users = User::all();
-        $user = User::findOrFail($request->id);
-        //$user = new User;
-        //$user = $request;
-        //$user->fill($request->all());
-        //dd($id);
-        $user->update($request->all());
-        //dd('llegue');
+    // public function userUpdate( Request $request){
+    //     //dd($request->all());
+    //     //$users = User::all();
+    //     $user = User::findOrFail($request->id);
+    //     //$user = new User;
+    //     //$user = $request;
+    //     //$user->fill($request->all());
+    //     //dd($id);
+    //     $user->update($request->all());
+    //     //dd('llegue');
 
-        return redirect()->route('profile', $user->id);
-    }
+    //     return redirect()->route('profile', $user->id);
+    // }
 
 }

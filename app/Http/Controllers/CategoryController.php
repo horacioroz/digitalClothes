@@ -109,6 +109,27 @@ class CategoryController extends Controller
         //SweetAlertController::solicitudRealizada('Categoria desactivada');
         return redirect()->route('category_list');
         }
+/**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\category  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function active(Request $request)
+    {
+        //echo 'Está a punto de eliminar esta categoría, está seguro de querer hacerlo ?';
+        //echo '';
+        $category = Category::findOrFail($request->id);
+        $category->fill(['active' => 1]);
+        $category->save();
+        // dd($category);
+        // DB::table('categories')
+        // ->where('id', $category->id)
+        // ->update(['active' => $category]);
+
+        //SweetAlertController::solicitudRealizada('Categoria desactivada');
+        return redirect()->route('category_list');
+        }
 
 
 }
