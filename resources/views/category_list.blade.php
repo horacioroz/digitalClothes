@@ -1,5 +1,5 @@
 
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('content')
 <h1>{{ $title }}</h1>
 <div class="user_list_titles">
