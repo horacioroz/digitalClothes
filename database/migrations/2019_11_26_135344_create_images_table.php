@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateColorsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateColorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('colors', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('color_name', 50)->unique();
-            // $table->bigInteger('product_id')->unsigned();
+            $table->string('image_name', 200)->unique;
+            $table->integer('product_id')->unsigned();
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
+    }
 
-}
     /**
      * Reverse the migrations.
      *
@@ -29,6 +29,6 @@ class CreateColorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('colors');
+        Schema::dropIfExists('images');
     }
 }

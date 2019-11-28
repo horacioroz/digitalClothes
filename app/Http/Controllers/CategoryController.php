@@ -15,9 +15,9 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function index(){
-        $categories= category::all();
+        $categories= Category::all();
         $title = 'Listado de Categorías';
-        return view('category_list')->with('categories', category::all())->with('title', 'Listado de Categorías') ;
+        return view('category_list')->with('categories', Category::all())->with('title', 'Listado de Categorías') ;
         //return view('products_list', compact('title',  'users'));
     }
 

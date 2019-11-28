@@ -1,0 +1,22 @@
+select{
+    color:black;
+}
+.product_category_id{
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+}
+.product_category_id_ul{
+    display: flex;
+    font-size: 0.5em;
+    box-sizing: border-box;
+}
+.product_category_id_ul li{
+    display: inline-flex;
+}
+.product_category_id_item {
+    /*flex-direction:row;*/
+    font-size: 1.2em;
+
+}

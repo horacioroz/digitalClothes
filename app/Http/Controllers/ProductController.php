@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Color;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ProductController extends Controller
 {
@@ -22,6 +25,23 @@ class ProductController extends Controller
      //        $table->double('discount_porcent')->nullable();
      //        $table->timestamps();
      //    });
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\category  $category
+     * @return \Illuminate\Http\Response
+     */
+        public function edit(Product $id){
+            $products = Product::all();
+            $product = Product::findOrFail($id);
+
+//             $color = Colors::find($product->id)->colors;
+// dd($color);
+
+            return view('product_edit')->with('product', $id)->with('categories', Category::all())->with('colors', $color);
+        }
+
        public function save(Request $request){
 
         $rules = [
@@ -42,10 +62,17 @@ class ProductController extends Controller
         return  redirect('/product');
     }
     public function index(){
-        $products = Product::all();
         $title = 'Listado de Productos';
-        return view('product_list')->with('products', Product::all())->with('title', 'Listado de productos') ;
-        //return view('products_list', compact('title',  'users'));
+
+        $products = Product::with([
+            'colors' => function ($q) {
+                return $q;
+            }
+        ])->get();
+
+        return view('product_list')->with('products', $products)
+        ->with('title', 'Listado de productos')
+        ->with('colors',Color::all()) ;
     }
 
     public function productShow($id){
@@ -62,6 +89,16 @@ class ProductController extends Controller
       return redirect('product_list');
 
     }
+    // public function result(Products $product) {
+
+    // $productId = $product->get('product_id');
+
+    // $color = Color::whereHas('products', function($query) use($productId) {
+    //     $query->where('product.id', $productId);
+    // })->get();
+
+    //     return $color;
+    // }
 
             // public function userUpdate( Request $request){
             //     //dd($request->all());
@@ -131,18 +168,6 @@ class ProductController extends Controller
 //         //
 //     }
 
-//     /**
-//      * Show the form for editing the specified resource.
-//      *
-//      * @param  \App\category  $category
-//      * @return \Illuminate\Http\Response
-//      */
-//     public function edit(Category $id)
-//     {    $categories = Category::all();
-//          $category = Category::findOrFail($id);
-
-//           return view('category_edit')->with('category', $id) ;
-//     }
 
 //     *
 //      * Update the specified resource in storage.

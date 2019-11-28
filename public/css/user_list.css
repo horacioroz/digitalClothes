@@ -136,6 +136,10 @@ hr{
     height:1%;
     align-items: center;
 }
+.color_list p{
+    display: flex;
+    flex-direction: column;
+}
 .price{
 
 }

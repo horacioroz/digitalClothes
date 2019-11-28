@@ -13,11 +13,13 @@ class DatabaseSeeder extends Seeder{
     public function run(){
          $this->truncateTables([
              'users',
-             'products'
+             'products',
+             'categories'
          ]);
 
         $this->call(UserTableSeeder::class);
         $this->call(ProductSeeder::class);
+        $this->call(CategorySeeder::class);
     }
 
     protected function truncateTables(array $tables){

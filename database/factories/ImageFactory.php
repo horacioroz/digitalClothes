@@ -2,12 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\color;
+use App\image;
 use Faker\Generator as Faker;
 
-$factory->define(Color::class, function (Faker $faker) {
+$factory->define(image::class, function (Faker $faker) {
     return [
-
         //
     ];
 });

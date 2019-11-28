@@ -16,18 +16,18 @@ class UsersModuleTest extends TestCase
      * Se elimina 'public' de la funcion porque en el test no es necesaria
      * @test
      */
-    function it_loads_the_user_profile_page()
-    {
-        $this->withoutExceptionHandling();
+    // function it_loads_the_user_profile_page()
+    // {
+    //     $this->withoutExceptionHandling();
 
-        // $user = User::findOrFail($user->id);
-        $user = factory(User::class)->create();
+    //     // $user = User::findOrFail($user->id);
+    //     $user = factory(User::class)->create();
 
-        $response = $this->get($user);
+    //     $response = $this->get($user);
 
-        $response->assertStatus(200);
-                 //->assertSee('first_name');
-    }
+    //     $response->assertStatus(200);
+    //              //->assertSee('first_name');
+    // }
 
 //  function it_updates_a_user(){
 

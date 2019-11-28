@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 50);
             $table->string('description', 250);
-            $table->integer('category_id')->unsigned;
-            $table->string('prod_img')->nullable();
-            $table->string('color_id')->nullable();
-            $table->string('size_id')->nullable();
+            $table->integer('category_id')->unsigned();
+            // $table->string('prod_img')->nullable();
+            // $table->bigInteger('color_id')->unsigned;
+            //$table->bigInteger('size_id')->unsigned();
             $table->double('price',8,2)->nullable();
             $table->double('discount_porcent')->nullable();
             $table->boolean('active')->default(1);
