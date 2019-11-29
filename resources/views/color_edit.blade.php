@@ -22,7 +22,7 @@
             <form action="/color_search" method="GET" class="color-search-form">
                 <input type="text" class="color-search-box" name="busqueda">
                 <input type="submit" class="color-search"    value="Buscar">
-                <a href="{{url('color_create')}}" class="color_add"><i class="fas fa-upload">     Agregar Categoría</i></a>
+                <a href="{{url('color_create')}}" class="color_add"><i class="fas fa-upload">     Agregar Color</i></a>
             </form>
         </div>
     </div>

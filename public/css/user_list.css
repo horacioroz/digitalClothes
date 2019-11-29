@@ -1,3 +1,5 @@
+/*USERS*/
+
 h1{
     text-align: center;
 }
@@ -35,7 +37,7 @@ h1{
 }
 
 
-/*CATEGORIAS*/
+/*CATEGORIES*/
 
 
 .category_list_row{
@@ -244,7 +246,7 @@ hr{
     align-items: center;
 }
 
-/*Talles*/
+/*SIZES*/
 
 
 .size_list p{
@@ -346,8 +348,122 @@ hr{
     align-items: center;
 }
 
+/*PRODUCTS*/
 
+.product_list_titles{
+    width: 75%;
+    background-color: black;
+    color:white;
+    display: flex;
+    /*justify-content: center;*/
+    height: 2%;
 
+}
+.product_list_titles p{
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 1.5em;
+    margin: 0 0.5em;
+}
+
+.product_list p{
+    display: flex;
+    flex-direction: column;
+}
+.product_list_row{
+    width: 70%;
+    margin:auto;
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    align-items: flex-start;
+}
+.product_list_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0.5em;
+    height:1%;
+    color:black;
+    align-items: center;
+}
+.id{
+    width: 15%;
+}
+.product_list_item i{
+    display: flex;
+    justify-content: center;
+}
+.product_add{
+    color:black;
+    display: flex;
+    padding-top: 1vh;
+    width: 20%;
+
+}
+.product_add:hover{
+    color:grey;
+    text-decoration: none;
+}
+.product-search{
+    color: #fff;
+    background-color: black;
+    border-color: black;
+    border-radius: 0;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    width: 10%;
+}
+.product-search:hover{
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+.product-search-box{
+    width: 30%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+
+}
+.product-search-group{
+    display: flex;
+    width: 70%;
+    margin:auto;
+    justify-content: space-around;
+}
+.product-search-form{
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin:auto;
+    display:flex;
+    width: 70%;
+    height: 2%;
+
+}
+.product_list_link{
+  color: black;
+  background-color: white;
+  margin-left: 2%;
+  text-align: center;
+  margin-top: 2%;
+}
+.product_list_link:hover {
+  color: grey;
+  text-decoration:underline;
+}
+.product_form_footer{
+    display: flex;
+    flex-direction: column;
+}
+.product_list_item_not_active{
+    color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0.5em;
+    height:1%;
+    align-items: center;
+}
 
 .price{
 

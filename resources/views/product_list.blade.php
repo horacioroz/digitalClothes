@@ -2,8 +2,8 @@
 @section('content')
 
 <h1>{{ $title }}</h1>
-<div class="user_list_titles">
-    <p>Id</p>
+<div class="product_list_titles">
+    <p class="id">Id</p>
     <p>Nombre</p>
     <p>Descripción</p>
     <p>Categoría</p>
@@ -23,46 +23,57 @@
         {{-- $color = $product->colors()->get(); --}}
 
 
-    <li class="category_list_row">
-        <p class="user_list_item">{{ $product->id}}</p>
-        <p class="user_list_item">{{ $product->name}}</p>
-        <p class="user_list_item">{{$product->description}}</p>
-        <p class="user_list_item">{{$product->category["category_name"]}}</p>
+    <li class="product_list_row">
+        <p class="product_list_item id">{{ $product->id}}</p>
+        <p class="product_list_item">{{ $product->name}}</p>
+        <p class="product_list_item">{{$product->description}}</p>
+        <p class="product_list_item">{{$product->category["category_name"]}}</p>
         <div class="color_list">
             @foreach($product->colors as $color)
-                <p class="user_list_item ">{{$color->color_name}}</p>
+                <p class="product_list_item ">{{$color->color_name}}</p>
             @endforeach
         </div>
-        <p class="user_list_item">{{$product->size}}</p>
-        <p class="user_list_item price">{{$product->price}}</p>
-        <p class="user_list_item">{{$product->discount_porcet}}</p>
+        <div class="size_list">
+            @foreach($product->sizes as $size)
+            {{-- @dd($product); --}}
+                <p class="product_list_item size_list">{{$size->size_name}}</p>
+            @endforeach
+        </div>
+        {{-- <p class="product_list_item">{{$product->size}}</p> --}}
+        <p class="product_list_item price">{{$product->price}}</p>
+        <p class="product_list_item">{{$product->discount_porcet}}</p>
         <a href="{{ url('product_edit',$product->id) }}" class="category_list_item"><i class="fas fa-edit"></i></a>
         <a href="{{ url('product_active',$product->id) }}" class="category_list_item"><i class="fas fa-trash-restore-alt"></i></a>
         <a href="{{url('product_destroy',$product->id)}}" class="category_list_item"><i class="fas fa-trash-alt"></i></a>
     </li>
     <hr>
     @else
-    <li class="category_list_row">
-        <p class="category_list_item_not_active ">{{ $product->id}}</p>
-        <p class="category_list_item_not_active">{{ $product->name}}</p>
-        <p class="category_list_item_not_active">{{$product->description}}</p>
-        <p class="category_list_item_not_active">{{$product->category["category_name"]}}</p>
+    <li class="product_list_row">
+        <p class="product_list_item_not_active id">{{ $product->id}}</p>
+        <p class="product_list_item_not_active">{{ $product->name}}</p>
+        <p class="product_list_item_not_active">{{$product->description}}</p>
+        <p class="product_list_item_not_active">{{$product->category["category_name"]}}</p>
         <div class="color_list">
             @foreach($product->colors as $color)
-                <p class="category_list_item_not_active color_list">{{$color->color["color_name"]}}</p>
+                <p class="product_list_item_not_active color_list">{{$color->color_name}}</p>
             @endforeach
         </div>
-        <p class="category_list_item_not_active">{{$product->size}}</p>
-        <p class="category_list_item_not_active price">{{$product->price}}</p>
-        <p class="category_list_item_not_active">{{$product->discount_porcet}}</p>
-        <a href="{{ url('product_edit',$product->id) }}" class="category_list_item"><i class="fas fa-edit"></i></a>
-        <a href="{{ url('product_active',$product->id) }}" class="category_list_item"><i class="fas fa-trash-restore-alt"></i></a>
-        <a href="{{url('product_destroy',$product->id)}}" class="category_list_item"><i class="fas fa-trash-alt"></i></a>
+        <div class="size_list">
+            @foreach($product->sizes as $size)
+                <p class="product_list_item_not_active size_list">{{$size->size_name}}</p>
+            @endforeach
+        </div>
+        {{-- <p class="category_list_item_not_active">{{$product->size}}</p> --}}
+        <p class="product_list_item_not_active price">{{$product->price}}</p>
+        <p class="product_list_item_not_active">{{$product->discount_porcet}}</p>
+        <a href="{{ url('product_edit',$product->id) }}" class="product_list_item"><i class="fas fa-edit"></i></a>
+        <a href="{{ url('product_active',$product->id) }}" class="product_list_item"><i class="fas fa-trash-restore-alt"></i></a>
+        <a href="{{url('product_destroy',$product->id)}}" class="product_list_item"><i class="fas fa-trash-alt"></i></a>
     </li>
     <hr>
     @endif
     @empty
-    <li class="size_list_row"><p class="size_list_item">No hay productos registrados.</p></li>
+    <li class="product_list_row"><p class="product_list_item">No hay productos registrados.</p></li>
     @endforelse
 
 </ul>
