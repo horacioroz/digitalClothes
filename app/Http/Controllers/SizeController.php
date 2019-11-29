@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\size;
+use App\Size;
 use Illuminate\Http\Request;
 
 class SizeController extends Controller
@@ -14,7 +14,10 @@ class SizeController extends Controller
      */
     public function index()
     {
-        //
+        $sizes= Size::all();
+        $title = 'Listado de Talles';
+        return view('size_list')->with('sizes', Size::all())->with('title', 'Listado de Talles') ;
+
     }
 
     /**
@@ -22,32 +25,18 @@ class SizeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+      public function create(Request $request)
     {
-        //
+            $request->all();
+            $this->validate($request,
+                ['size_name'=>'required'],
+                ['size_name.required'=>'Debe ingresar el Nombre']);
+            $size = new Size($request->all());
+            $size->save();
+
+            return redirect('size_create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\size  $size
-     * @return \Illuminate\Http\Response
-     */
-    public function show(size $size)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -55,9 +44,11 @@ class SizeController extends Controller
      * @param  \App\size  $size
      * @return \Illuminate\Http\Response
      */
-    public function edit(size $size)
-    {
-        //
+    public function edit(size $id)
+    {    $sizes = Size::all();
+         $size = Size::findOrFail($id);
+
+          return view('size_edit')->with('size', $id) ;
     }
 
     /**
@@ -67,10 +58,14 @@ class SizeController extends Controller
      * @param  \App\size  $size
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, size $size)
+    public function update(Request $request)
     {
-        //
-    }
+        $size = Size::findOrFail($request->id);
+        $size->size_name =  $request->get('sizeName');
+        $size->save();
+
+        return redirect()->route('size_list');
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +73,22 @@ class SizeController extends Controller
      * @param  \App\size  $size
      * @return \Illuminate\Http\Response
      */
-    public function destroy(size $size)
+    public function destroy(Request $request)
     {
-        //
-    }
+        $size = Size::findOrFail($request->id);
+        $size->fill(['active' => 0]);
+        $size->save();
+        return redirect()->route('size_list');
+        }
+
+    public function active(Request $request)
+    {
+        $size = Size::findOrFail($request->id);
+        $size->fill(['active' => 1]);
+        $size->save();
+        return redirect()->route('size_list');
+        }
+
+
 }
+

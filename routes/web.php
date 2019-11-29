@@ -51,6 +51,22 @@ Route::put("category_edit/{id}",'CategoryController@update')->name('category_upd
 Route::get('category_active/{id}', 'CategoryController@active')->name('category_active');
 Route::get('category_destroy/{id}', 'CategoryController@destroy')->name('category_destroy');
 //Route::get("category_edit/{id}",[ 'as' => 'category_edit', 'uses' => 'CategoryController@edit']);
+//color Routes
+Route::get('/color_list', [ 'as' => 'color_list', 'uses' => 'ColorController@index']);
+Route::get('/color_create', function(){return view('color_create');});
+Route::post("color_create",'ColorController@create')->name('color_create');
+Route::get("color_edit/{id}",'ColorController@edit')->name('color_edit');
+Route::put("color_edit/{id}",'ColorController@update')->name('color_update');
+Route::get('color_active/{id}', 'ColorController@active')->name('color_active');
+Route::get('color_destroy/{id}', 'ColorController@destroy')->name('color_destroy');
+//size Routes
+Route::get('/size_list', [ 'as' => 'size_list', 'uses' => 'SizeController@index']);
+Route::get('/size_create', function(){return view('size_create');});
+Route::post("size_create",'SizeController@create')->name('size_create');
+Route::get("size_edit/{id}",'SizeController@edit')->name('size_edit');
+Route::put("size_edit/{id}",'SizeController@update')->name('size_update');
+Route::get('size_active/{id}', 'SizeController@active')->name('size_active');
+Route::get('size_destroy/{id}', 'SizeController@destroy')->name('size_destroy');
 
 
 //Route::get('/home', 'HomeController@index')->name('/home');

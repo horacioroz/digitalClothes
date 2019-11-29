@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('content')
 
 
@@ -18,7 +18,7 @@
             </div>
             <div class="category_form_footer">
             <p><button class=" btn btn-register " type="submit" >Guardar</button></p>
-            <a href="{{ url('category_list') }}" class="categoty_list_link"  >Volver al Listado de Categorías</a>
+            <a href="{{ url('category_list') }}" class="category_list_link"  >Volver al Listado de Categorías</a>
             </div>
         </form>
     </div>

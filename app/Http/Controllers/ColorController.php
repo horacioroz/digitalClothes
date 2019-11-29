@@ -14,7 +14,10 @@ class ColorController extends Controller
      */
     public function index()
     {
-        //
+        $colors= Color::all();
+        $title = 'Listado de Colores';
+        return view('color_list')->with('colors', Color::all())->with('title', 'Listado de Colores') ;
+
     }
 
     /**
@@ -22,10 +25,18 @@ class ColorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+      public function create(Request $request)
     {
-        //
+            $request->all();
+            $this->validate($request,
+                ['color_name'=>'required'],
+                ['color_name.required'=>'Debe ingresar el Nombre']);
+            $color = new Color($request->all());
+            $color->save();
+
+            return redirect('color_create');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -55,9 +66,11 @@ class ColorController extends Controller
      * @param  \App\color  $color
      * @return \Illuminate\Http\Response
      */
-    public function edit(color $color)
-    {
-        //
+    public function edit(Color $id)
+    {    $colors = Color::all();
+         $color = Color::findOrFail($id);
+
+          return view('color_edit')->with('color', $id) ;
     }
 
     /**
@@ -67,10 +80,14 @@ class ColorController extends Controller
      * @param  \App\color  $color
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, color $color)
+    public function update(Request $request)
     {
-        //
-    }
+        $color = Color::findOrFail($request->id);
+        $color->color_name =  $request->get('colorName');
+        $color->save();
+
+        return redirect()->route('color_list');
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +95,22 @@ class ColorController extends Controller
      * @param  \App\color  $color
      * @return \Illuminate\Http\Response
      */
-    public function destroy(color $color)
+    public function destroy(Request $request)
     {
-        //
-    }
+        $color = Color::findOrFail($request->id);
+        $color->fill(['active' => 0]);
+        $color->save();
+        return redirect()->route('color_list');
+        }
+
+    public function active(Request $request)
+    {
+        $color = Color::findOrFail($request->id);
+        $color->fill(['active' => 1]);
+        $color->save();
+        return redirect()->route('color_list');
+        }
+
+
 }
+

@@ -62,7 +62,7 @@
     <hr>
     @endif
     @empty
-    <li>No hay categorías registradas.</li>
+    <li class="size_list_row"><p class="size_list_item">No hay productos registrados.</p></li>
     @endforelse
 
 </ul>
@@ -70,7 +70,7 @@
     <form action="/product_search" method="GET" class="category-search-form">
         <input type="text" class="category-search-box" name="busqueda">
         <input type="submit" class="category-search"    value="Buscar">
-        <a href="{{url('product_create')}}" class="category_add"><i class="fas fa-upload">    Agregar Categoría</i></a>
+        <a href="{{url('product_create')}}" class="category_add"><i class="fas fa-upload">    Agregar Producto</i></a>
     </form>
 </div>
 @endsection

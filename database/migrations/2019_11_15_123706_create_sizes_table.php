@@ -16,14 +16,14 @@ class CreateSizesTable extends Migration
         Schema::create('sizes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('size_name', 50);
-            $table->bigInteger('category_id')->unsigned();
+            // $table->bigInteger('category_id')->unsigned();
             $table->boolean('active')->default(1);
             $table->timestamps();
 
         });
-        Schema::table('sizes', function($table) {
-            $table->foreign('category_id')->references('id')->on('categories');
-        });
+        // Schema::table('sizes', function($table) {
+        //     $table->foreign('category_id')->references('id')->on('categories');
+        // });
     }
 
     /**
