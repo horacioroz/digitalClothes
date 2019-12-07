@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\image;
+use App\Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadRequest;
 
 class ImageController extends Controller
 {
@@ -22,10 +23,20 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    // public function upload()
+    // {
+    //     public function uploadForm()
+    // {
+    //     return view('upload_form');
+    // }
+
+    // public function uploadSubmit(UploadRequest $request)
+    // {
+    //     // Coming soon...
+    // }
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -80,6 +91,14 @@ class ImageController extends Controller
      */
     public function destroy(image $image)
     {
-        //
+
+    }
+    public function productImageDestroy($id){
+      $image =  Image::find($id);
+      $product = $image->product_id;
+      $image->active = (0);
+      $image->save();
+      //$product->delete();//Hay que cambiar esto por el cambio del boolean 'active' por cero
+      return redirect()->route('product_edit',['id'=>$product]);
     }
 }

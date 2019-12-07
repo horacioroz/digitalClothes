@@ -351,7 +351,7 @@ hr{
 /*PRODUCTS*/
 
 .product_list_titles{
-    width: 75%;
+    width: 80%;
     background-color: black;
     color:white;
     display: flex;
@@ -386,6 +386,12 @@ hr{
     height:1%;
     color:black;
     align-items: center;
+}
+a.product_list_item {
+    width: 25%;
+}
+.eae{
+    width:5%;
 }
 .id{
     width: 15%;
@@ -465,7 +471,8 @@ hr{
     align-items: center;
 }
 
-.price{
+p .price{
+    width: 10%
 
 }
 

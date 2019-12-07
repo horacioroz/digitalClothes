@@ -1,16 +1,41 @@
 select{
     color:black;
+    width: 100%;
 }
 .product_category_id{
     color: black;
     display: flex;
     flex-wrap: wrap;
     width: 20%;
+    padding: 0 0.5em;
+}
+ .product_category_id select{
+    width: 60%;
+    /*height: 30%;*/
+    /*overflow: hidden;*/
 }
 .product_category_id_ul{
     display: flex;
-    font-size: 0.5em;
+    font-size: 1em;
     box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    overflow: hidden;
+
+}
+
+.dropdown-toggle{
+    /*display: none;*/
+       height: 30%;
+       padding: 0;
+       margin:0 0 1em 0;
+}
+.btn{
+    height: 30%;
+}
+.btn-group{
+    padding: 0;
+
 }
 .product_category_id_ul li{
     display: inline-flex;
@@ -18,5 +43,20 @@ select{
 .product_category_id_item {
     /*flex-direction:row;*/
     font-size: 1.2em;
+}
+.color_select{
+    height: 20%;
+}
+.thumbs{
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+    justify-content: space-around;
+}
+.thumb{
+    /*width: 30%;*/
+    height: 30%;
+    display: flex;
+    padding: 0 2%
 
 }

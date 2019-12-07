@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container_vista {
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+.lista_vista {
+    flex: 0 0 75%;
+    max-width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: ;
+}
+
+.filtros_vista {
+    flex: 0 0 15%;
+    max-width: 20%;
+    margin-left: 0;
+
+}
+
+.lista_vista article {
+  width: 25%;
+  display: block;
+  margin: 2%;
+  padding: 2%;
+  box-sizing: content-box;
+}
+
+.lista_vista article:hover {
+    border: 1px solid  lightgray ;
+}
+
+.carousel-item{
+  width: 50vw;
+  height: 40vh;
+}
+
+.lista_vista_slider {
+    width: 99%;
+}
+
+.lista_vista_slider img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators {
+  filter: invert(50%);
+}
+
+.p_vista{
+  margin-top: 1rem;
+}
+
+.p_vista a{
+  color: black;
+}
+
+.p_vista a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.pname_vista {
+  font-size: 1.4rem;
+  float: left;
+}
+
+.pprice_vista {
+  font-size: 1.4rem;
+  float: right;
+}
+
+.pdesc_vista {
+  font-size: 1rem;
+  float: left;
+}
+
+.breadcrumb-vista {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: white;
+    border-radius: .25rem;
+    margin-top: 2%;
+}
+
+.breadcrumb-item a , li{
+  color: black;
+  font-weight: 500;
+}
+
+.breadcrumb-item a:hover{
+  color: black;
+  text-decoration: underline;
+}
+
+.dropdownmenu_vista{
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+.dropdownmenu_vista h6{
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  color: black;
+}
+
+.titulo_vista {
+    text-align: center;
+}
+
+.pags_vista {
+  display:flex ;
+  height: 5vh;
+  /*flex-direction: row;*/
+}
+.pages a{
+  color:black;
+    flex-direction: row;
+}
+.fa-arrow-left{
+    color: black;
+}
+.ast_item{
+    width: 33.3%;
+}
+@media only screen and (max-width: 768px) {
+
+  .lista_vista {
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.lista_vista article{
+    display: inline-block;
+    width: 50%;
+    justify-content: center;
+}
+}

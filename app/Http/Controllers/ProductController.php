@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Category;
 use App\Color;
+use App\Size;
+use App\Image;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadRequest;
 use Illuminate\Support\Facades\DB;
 
 
@@ -35,11 +38,15 @@ class ProductController extends Controller
         public function edit(Product $id){
             $products = Product::all();
             $product = Product::findOrFail($id);
+            $prodcolor= Color::pluck('color_name','id');
 
+            $images = Image::all('image_name','product_id' );
+            // pluck('image_name','product_id');
+            // dd($images);
 //             $color = Colors::find($product->id)->colors;
 // dd($color);
 
-            return view('product_edit')->with('product', $id)->with('categories', Category::all())->with('colors', $color);
+            return view('product_edit',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
         }
 
        public function save(Request $request){
@@ -81,14 +88,28 @@ class ProductController extends Controller
         return view('product_show')->with('product', $product) ;
     }
 
-   public function productDelete($id){
+   public function productDestroy($id){
       $product =  Product::find($id);
       $product->active = (0);
       $product->save();
       //$product->delete();//Hay que cambiar esto por el cambio del boolean 'active' por cero
       return redirect('product_list');
+    }
+
+    public function active(Request $request)
+    {
+        $product = Product::findOrFail($request->id);
+        $product->fill(['active' => 1]);
+        $product->save();
+
+        return redirect()->route('product_list');
+        }
+
+    public function update(Request $request){
+
 
     }
+
     // public function result(Products $product) {
 
     // $productId = $product->get('product_id');

@@ -11,18 +11,13 @@
     <p>Talles</p>
     <p>Precio</p>
     <p>Descuento</p>
-    <p>Editar</p>
-    <p>Activar</p>
-    <p>Eliminar</p>
+    <p class="eae">Editar</p>
+    <p class="eae">Activar</p>
+    <p class="eae">Eliminar</p>
 </div>
 <ul>
     @forelse($products as $product)
-    {{-- @dd($product->colors); --}}
     @if($product->active == 1)
-
-        {{-- $color = $product->colors()->get(); --}}
-
-
     <li class="product_list_row">
         <p class="product_list_item id">{{ $product->id}}</p>
         <p class="product_list_item">{{ $product->name}}</p>
@@ -35,16 +30,15 @@
         </div>
         <div class="size_list">
             @foreach($product->sizes as $size)
-            {{-- @dd($product); --}}
                 <p class="product_list_item size_list">{{$size->size_name}}</p>
             @endforeach
         </div>
         {{-- <p class="product_list_item">{{$product->size}}</p> --}}
-        <p class="product_list_item price">{{$product->price}}</p>
-        <p class="product_list_item">{{$product->discount_porcet}}</p>
-        <a href="{{ url('product_edit',$product->id) }}" class="category_list_item"><i class="fas fa-edit"></i></a>
-        <a href="{{ url('product_active',$product->id) }}" class="category_list_item"><i class="fas fa-trash-restore-alt"></i></a>
-        <a href="{{url('product_destroy',$product->id)}}" class="category_list_item"><i class="fas fa-trash-alt"></i></a>
+        <p class="product_list_item price">$  {{number_format( $product->price, 2, ",", "." ) }}</p>
+        <p class="product_list_item">{{number_format( $product->discount_porcent, 2, ",", "." ) }}%</p>
+        <a href="{{ url('product_edit',$product->id) }}" class="product_list_item"><i class="fas fa-edit"></i></a>
+        <a href="{{ url('product_active',$product->id) }}" class="product_list_item"><i class="fas fa-trash-restore-alt"></i></a>
+        <a href="{{url('product_destroy',$product->id)}}" class="product_list_item"><i class="fas fa-trash-alt"></i></a>
     </li>
     <hr>
     @else
@@ -63,12 +57,11 @@
                 <p class="product_list_item_not_active size_list">{{$size->size_name}}</p>
             @endforeach
         </div>
-        {{-- <p class="category_list_item_not_active">{{$product->size}}</p> --}}
-        <p class="product_list_item_not_active price">{{$product->price}}</p>
-        <p class="product_list_item_not_active">{{$product->discount_porcet}}</p>
-        <a href="{{ url('product_edit',$product->id) }}" class="product_list_item"><i class="fas fa-edit"></i></a>
-        <a href="{{ url('product_active',$product->id) }}" class="product_list_item"><i class="fas fa-trash-restore-alt"></i></a>
-        <a href="{{url('product_destroy',$product->id)}}" class="product_list_item"><i class="fas fa-trash-alt"></i></a>
+        <p class="product_list_item_not_active price">$  {{number_format( $product->price, 2, ",", "." ) }}</p>
+        <p class="product_list_item_not_active">{{number_format( $product->discount_porcent, 2, ",", "." ) }}%</p>
+        <a href="{{ url('product_edit',$product->id) }}" class="product_list_item eae"><i class="fas fa-edit"></i></a>
+        <a href="{{ url('product_active',$product->id) }}" class="product_list_item eae"><i class="fas fa-trash-restore-alt"></i></a>
+        <a href="{{url('product_destroy',$product->id)}}" class="product_list_item eae"><i class="fas fa-trash-alt"></i></a>
     </li>
     <hr>
     @endif

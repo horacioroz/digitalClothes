@@ -15,11 +15,15 @@ class DatabaseSeeder extends Seeder{
              'users',
              'products',
              'categories'
+             'colors'
+             'sizes'
          ]);
 
         $this->call(UserTableSeeder::class);
         $this->call(ProductSeeder::class);
         $this->call(CategorySeeder::class);
+        $this->call(ColorSeeder::class);
+        $this->call(SizeSeeder::class);
     }
 
     protected function truncateTables(array $tables){

@@ -1,17 +1,18 @@
 @import url('header.css');
 @import url('nav.css');
 @import url('body.css');
-@import url('art-view.css');
+@import url('art_view_new.css');
 @import url('form_contact_estilos.css');
 @import url('shoppingCart.css');
 @import url('faq.css');
 @import url('user_profile.css');
-@import url('art_list.css');
+@import url('art_list_new.css');
 @import url('user_list.css');
 @import url('user_profile_edit.css');
 @import url('product_edit.css');
 @import url('register.css');
 @import url('footer.css');
+@import url('dropzone.css');
 
 *{
     width:100%;
@@ -22,7 +23,7 @@
 
 }
 #title{
-    display: none;
+    display: no
 }
 h1{
     font-size: 3em;
