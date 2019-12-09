@@ -6,7 +6,7 @@
 <div class="maincontainer-register">
     <h1>Editando Producto: {{$product->id}}</h1>
     <div class="col-12 col-md-8 container-register-edit">
-        <form class="form " method="POST" enctype="multipart/form-data" action='{{ "route('product_update'),$product->id" }}' novalidate id="mydropzone" >
+        <form class="form " method="POST" enctype="multipart/form-data" action='{{ "route('product_update'),$product->id" }}' novalidate >
             {{method_field('PUT')}}
             {!!csrf_field()!!}
             <div class="form-user-edit">
@@ -68,19 +68,6 @@
                 <div class="form-user-edit">
                 <div class="form-group-edit thumbs ">
                     <label for="prod_img">Foto</label>
-                    {{-- <div id="dropzonePreview" class="dropzone "></div> --}}
-
-
-
-
-
-
-
-
-
-
-
-
  {{--                    <form action="{{ url('images/products')}}" class="dropzone" id="my-dropzone">
                         aaa
                     </form>
@@ -99,27 +86,27 @@
 
 
                      {{-- @section('content') --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="row"    >
             <div class="panel panel-primary">
-               {{--  <div class="panel-heading">
+                <div class="panel-heading">
                     Dropzone
-                </div> --}}
+                </div>
                 <div class="panel-body">
     <div class="dropzone dropzone-file-area" id="my-dropzone">
-                    {{-- <div class="dropzone" id="myDropzone" > --}}
+                    <div class="dropzone" id="myDropzone" >
                     {!! Form::open(['route'=> 'file.store', 'method' => 'POST', 'files'=>'true', 'id' => 'my-dropzone' , 'class' => 'dropzone']) !!}
                         <div class="dz-message" style="height:200px;">
                             Drop your files here
-                    <div class="dropzone-previews" id="dropzonePreview"></div>
                         </div>
                      </div>
-                    {{-- <button type="submit" class="btn btn-success" id="submit">Save</button> --}}
+                    <div class="dropzone-previews"></div>
+                    <button type="submit" class="btn btn-success" id="submit">Save</button>
                     {!! Form::close() !!}
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
  {{-- @endsection --}}
 {{-- <form role="form" enctype="multipart/form-data">
     <input hidden id="file" name="file"/>
@@ -166,7 +153,7 @@
                     //a.t
                 </script> --}}
             </div>
-                <button class=" btn btn-register " type="submit" id="sbmtbtn">Guardar</button>
+                <button class=" btn btn-register " type="submit" >Guardar</button>
         </form>
     </div>
 </div>
@@ -174,7 +161,7 @@
 
 @section('scripts')
     {{-- {!! Html::script('js/dropzone.js'); !!} --}}
-   {{--  <script>
+    <script>
         Dropzone.options.fileUpload = {
             url: 'blackHole.php',
             addRemoveLinks: true,
@@ -192,8 +179,8 @@
         Dropzone.options.myDropzone = {
             autoProcessQueue: false,
             uploadMultiple: true,
-            maxFilezise: 100,
-            maxFiles: 100,
+            maxFilezise: 10,
+            maxFiles: 10,
 
             init: function() {
                 myDropzone = this;
@@ -217,40 +204,6 @@
                 );
             }
         };
-    </script> --}}
-    <script>
-    Dropzone.options.#mydropzone = {
-    //url does not has to be written
-    //if we have wrote action in the form
-    //tag but i have mentioned here just for convenience sake
-        // url: 'upload.php',
-        uploadMultiple: true,
-        parallelUploads: 100,
-        maxFiles: 100,
-        addRemoveLinks: true,
-        autoProcessQueue: false, // this is important as you dont want form to be submitted unless you have clicked the submit button
-        autoDiscover: false,
-        paramName: 'pic', // this is optional Like this one will get accessed in php by writing $_FILE['pic'] // if you dont specify it then bydefault it taked 'file' as paramName eg: $_FILE['file']
-        previewsContainer: '#dropzonePreview', // we specify on which div id we must show the files
-        clickable: false, // this tells that the dropzone will not be clickable . we have to do it because v dont want the whole form to be clickable
-        accept: function(file, done) {
-            console.log("uploaded");
-            done();
-        },
-        error: function(file, msg){
-            alert(msg);
-        },
-        init: function() {
-            var myDropzone = this;
-            //now we will submit the form when the button is clicked
-            $("#sbmtbtn").on('click',function(e) {
-               e.preventDefault();
-               myDropzone.processQueue(); // this will submit your form to the specified action path
-              // after this, your whole form will get submitted with all the inputs + your files and the php code will remain as usual
-        //REMEMBER you DON'T have to call ajax or anything by yourself, dropzone will take care of that
-            });
-        } // init end
-    };
-</script>
+    </script>
 @endsection
 

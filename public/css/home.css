@@ -13,6 +13,8 @@
 @import url('register.css');
 @import url('footer.css');
 @import url('dropzone.css');
+@import url('dropzone.min.css');
+@import url('basic.css');//dropzone
 
 *{
     width:100%;

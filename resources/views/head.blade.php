@@ -12,6 +12,6 @@
         <link  rel="icon"   href="{{ asset('images/favicon.ico') }}" >
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
-        <script src="resources/js/dropzone.js"></script>
+        <script src="public/js/dropzone.js"></script>
 
 {{-- borré la etiqueta final de head --}}

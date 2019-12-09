@@ -7,6 +7,8 @@ use App\Category;
 use App\Color;
 use App\Size;
 use App\Image;
+use App\Cart;
+use Session;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
@@ -15,19 +17,6 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-
-     // Schema::create('products', function (Blueprint $table) {
-     //        $table->bigIncrements('id');
-     //        $table->string('name', 50);
-     //        $table->string('description', 250);
-     //        $table->integer('category_id');
-     //        $table->string('prod_img')->nullable();
-     //        $table->string('color_id')->nullable();
-     //        $table->string('size_id')->nullable();
-     //        $table->double('price')->nullable();
-     //        $table->double('discount_porcent')->nullable();
-     //        $table->timestamps();
-     //    });
 
     /**
      * Show the form for editing the specified resource.
@@ -41,10 +30,7 @@ class ProductController extends Controller
             $prodcolor= Color::pluck('color_name','id');
 
             $images = Image::all('image_name','product_id' );
-            // pluck('image_name','product_id');
-            // dd($images);
-//             $color = Colors::find($product->id)->colors;
-// dd($color);
+
 
             return view('product_edit',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
         }
@@ -81,6 +67,19 @@ class ProductController extends Controller
         ->with('title', 'Listado de productos')
         ->with('colors',Color::all()) ;
     }
+    public function artList(){
+        $title = 'Listado de Productos';
+
+        $products = Product::with([
+            'colors' => function ($q) {
+                return $q;
+            }
+        ])->get();
+
+        return view('art_list_new')->with('products', $products)
+        ->with('title', 'Listado de productos')
+        ->with('colors',Color::all()) ;
+    }
 
     public function productShow($id){
          $product = Product::all();
@@ -109,7 +108,26 @@ class ProductController extends Controller
 
 
     }
+    public function getAddToCart(Request $request, $id){
+        $product =  Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+        $request->session()->put('cart', $cart);
+        return redirect()->route('art_list_new');
 
+
+        //En el link del "comprar"
+        //<a href="{{route('product.addToCart', ['id' => $product->id] ) }}"
+
+    }
+
+
+}
+
+
+// Desde acá
+//  /**
     // public function result(Products $product) {
 
     // $productId = $product->get('product_id');
@@ -134,12 +152,6 @@ class ProductController extends Controller
 
             //     return redirect()->route('profile', $user->id);
             // }
-
-}
-
-
-// Desde acá
-//  /**
 //      * Display a listing of the resource.
 //      *
 //      * @return \Illuminate\Http\Response

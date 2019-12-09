@@ -14,7 +14,6 @@
 Route::get('/', function () {return view('layouts/app');});
 Route::get('/home', function () {return view('home');});
 Route::get('/admin', function () {return view('admin');});
-Route::get('/shpCrt', function(){return view('shoppingCart');});
 Route::get('/login', function(){return view('login');});
 Route::post('/login', function(){return view('login');});
 Route::get('/signup', function(){return view('auth/register');});
@@ -30,7 +29,7 @@ Auth::routes();
 //Art Routes
 
 Route::get('/artic', function(){return view('art_view_new');});
-Route::get('/art_list', function(){return view('art_list_new');});
+Route::get('/art_list', [ 'as' => 'art_list_new', 'uses' => 'ProductController@artList']);
 
 
 //User Routes
@@ -83,5 +82,13 @@ Route::get('size_destroy/{id}', 'SizeController@destroy')->name('size_destroy');
 //image Routes
 
 Route::get('product_image_destroy/{id}', 'ImageController@productImageDestroy')->name('product_image_destroy');
+Route::get('product_image_store/{id}', 'ImageController@productImageStore')->name('product_image_store');
+
+//shoppingCart Routes
+Route::get('/shpCrt', function(){return view('shoppingCart');});
+Route::get('/add_to_cart/{id}', [ 'as' => 'product.addToCart', 'uses' => 'ProductController@getAddToCart']);
+Route::get('/shopping-cart', [ 'as' => 'product.shoppingCart', 'uses' => 'ProductController@getCart']);
+
+
 
 //Route::get('/home', 'HomeController@index')->name('/home');
