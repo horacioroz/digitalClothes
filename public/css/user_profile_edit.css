@@ -76,6 +76,12 @@ display: flex;
     width: 5em;
     display: inline-table;
 }
+
+
+
+
+
+
 @media only screen and (max-width: 768px) {
 
 
@@ -96,7 +102,6 @@ display: flex;
  .maincontainer-register label {
     font-size: 1.3rem;
   }
-
 
 
 }

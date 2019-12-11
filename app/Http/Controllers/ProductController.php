@@ -115,10 +115,13 @@ class ProductController extends Controller
         $cart->add($product, $product->id);
         $request->session()->put('cart', $cart);
         return redirect()->route('art_list_new');
-
-
-        //En el link del "comprar"
-        //<a href="{{route('product.addToCart', ['id' => $product->id] ) }}"
+    }
+    public function getCart() {
+        if(!Session::has('cart')){
+            return view('shoppingCart',['products' => null ]);
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
 
     }
 

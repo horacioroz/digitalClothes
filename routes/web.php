@@ -89,6 +89,10 @@ Route::get('/shpCrt', function(){return view('shoppingCart');});
 Route::get('/add_to_cart/{id}', [ 'as' => 'product.addToCart', 'uses' => 'ProductController@getAddToCart']);
 Route::get('/shopping-cart', [ 'as' => 'product.shoppingCart', 'uses' => 'ProductController@getCart']);
 
+//contact Routes
+Route::get('/form_contact', [ 'as' => 'contact', 'uses' => 'ContactUsController@contact_us']);
+Route::post('/form_contact', [ 'as' => 'contact', 'uses' => 'ContactUsController@contact_us_post']);
+
 
 
 //Route::get('/home', 'HomeController@index')->name('/home');
