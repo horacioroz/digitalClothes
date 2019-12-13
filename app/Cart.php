@@ -21,7 +21,8 @@ class Cart{
     }
 
     public function add($item, $id){
-        $storedItem = [ 'qty' => 0, 'price' => $item->price, 'item' => $item];//storedItem es el grupo de items a los cuales me refiero, ésta línea es para crearlo si no lo tengo
+        $storedItem = [ 'qty' => 0, 'price' => $item->price, 'color' => $item->color, 'size' => $item->size,
+         'item' => $item];//storedItem es el grupo de items a los cuales me refiero, ésta línea es para crearlo si no lo tengo
         if($this->items){//aquí chequeo si hay items en el carrito
             if(array_key_exists($id, $this->items)){//aquí si de los que hay está incluido el que quiero agregar
                 $storedItem = $this->items[$id];//si está asocia el item al array de ese artículo ya incluido

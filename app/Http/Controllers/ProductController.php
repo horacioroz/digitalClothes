@@ -104,8 +104,12 @@ class ProductController extends Controller
         return redirect()->route('product_list');
         }
 
-    public function update(Request $request){
+    public function update(Request $request ){
+        $product = Product::findOrFail($request->id);
+        // dd($request);
+        $product->update($request->all());
 
+        return redirect()->route('product_edit');
 
     }
     public function getAddToCart(Request $request, $id){

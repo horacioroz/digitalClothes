@@ -82,7 +82,7 @@ Route::get('size_destroy/{id}', 'SizeController@destroy')->name('size_destroy');
 //image Routes
 
 Route::get('product_image_destroy/{id}', 'ImageController@productImageDestroy')->name('product_image_destroy');
-Route::get('product_image_store/{id}', 'ImageController@productImageStore')->name('product_image_store');
+Route::post('product_image_store/{id}', 'ImageController@productImageStore')->name('product_image_store');
 
 //shoppingCart Routes
 Route::get('/shpCrt', function(){return view('shoppingCart');});
