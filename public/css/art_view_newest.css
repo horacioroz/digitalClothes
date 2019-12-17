@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.breadcrumbmain-art-view{
+    display: inline-block;
+}
+
+.breadcrumb-art-view {
+    float: left;
+    width: 20vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: white;
+    border-radius: .25rem;
+    margin-top: 2%;
+    color: black;
+}
+
+.breadcrumb-art-view li a {
+    color: black;
+    text-decoration: none;
+}
+.breadcrumb-art-view li a:hover {
+    text-decoration: underline;
+}
+
+.productcontainer-art-view{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 70vh;
+
+}
+.carousel-inner{
+    height: 60vh;
+    display: flex;
+}
+
+.column-art-view{
+    flex: 20%;
+    justify-content:flex-start;
+    flex-direction: column;
+    max-width: 20%;
+    margin-left: 4%;
+    display: block;
+}
+
+.bigproduct-art-view{
+    flex: 30%;
+    max-width: 30%;
+    display: block;
+    margin-top: 5%;
+}
+.productimage-art-view{
+    width: 60%;
+    height: 70%;
+}
+
+
+
+.producttext-art-view h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2%;
+}
+.producttext-art-view h2 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 4%;
+}
+
+.producttext-art-view label {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2rem;
+}
+
+.div-art-view{
+    padding-bottom: 6%;
+    margin: 5%;
+    border-bottom: 1.5px solid black;
+}
+
+.bigproduct-art-view img {
+    width: 100%;
+    height: 100%;
+}
+.producttext-art-view {
+    flex: 40%;
+    max-width: 40%;
+    text-align: center;
+}
+.product_container_art_view{
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+
+}
+.column_art_view_a{
+    border: solid 2px lightgray;
+    display: inline-block;
+    width: 20%;
+}
+.column_art_img{
+    width: 100%;
+}
+.column_art_view{
+    width: 15%;
+}
+.column_art_view_a:hover{
+    border-color: black;
+}
+
+.column_art_view_a img{
+    width: : 10%;
+    /*height: 100%;*/
+}
+.art_amounts{
+    display: inline-flex;
+
+}
+#price:before{
+    content:'$ ';
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .column-art-view {
+        display: none;
+    }
+
+
+    .bigproduct-art-view{
+        flex: 100%;
+        max-width: 100%;
+        margin-bottom: 4%;
+        margin-top: 2%;
+    }
+
+    .productimage-art-view{
+        width: 80%;
+        height: 80%;
+    }
+
+    .producttext-art-view {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 320px){
+
+}

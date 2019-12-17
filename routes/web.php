@@ -28,7 +28,8 @@ Route::resource('file', 'FileController');
 Auth::routes();
 //Art Routes
 
-Route::get('/artic', function(){return view('art_view_new');});
+// Route::get('/artic/{id}', function(){return view('art_view_new');});
+Route::get("/artic/{id}",'ProductController@art_show')->name('art_view_newest');
 Route::get('/art_list', [ 'as' => 'art_list_new', 'uses' => 'ProductController@artList']);
 
 
@@ -44,12 +45,15 @@ Route::put("user_profile_edit/{id}",'UserController@userUpdate')->name('profile_
 
 //Product Routes
 Route::get('/product_list', [ 'as' => 'product_list', 'uses' => 'ProductController@index']);
-Route::post("product_create",'ProductController@create')->name('product_create');
 Route::get("product_edit/{id}",'ProductController@edit')->name('product_edit');
 Route::put("product_edit/{id}",'ProductController@update')->name('product_update');
 Route::get('product_active/{id}', 'ProductController@active')->name('product_active');
 Route::get('product_destroy/{id}', 'ProductController@productDestroy')->name('product_destroy');
 Route::get('prodcolor/{id}', 'ProductController@getColors');
+// Route::get('product_create',function(){return view('product_create');});
+
+Route::get('/product_create',['as'=> 'product_create', 'uses' => 'ProductController@create']);
+Route::post('product_create','ProductController@create')->name('product_create');
 
 //Category Routes
 Route::get('/category_list', [ 'as' => 'category_list', 'uses' => 'CategoryController@index']);
@@ -85,7 +89,8 @@ Route::get('product_image_destroy/{id}', 'ImageController@productImageDestroy')-
 Route::post('product_image_store/{id}', 'ImageController@productImageStore')->name('product_image_store');
 
 //shoppingCart Routes
-Route::get('/shpCrt', function(){return view('shoppingCart');});
+// Route::get('/shoppingCart', [ 'as' => 'shoppingCart', 'uses' => 'ProductController@getCart']);
+// Route::get('/shpCrt', function(){return view('shoppingCart');});
 Route::get('/add_to_cart/{id}', [ 'as' => 'product.addToCart', 'uses' => 'ProductController@getAddToCart']);
 Route::get('/shopping-cart', [ 'as' => 'product.shoppingCart', 'uses' => 'ProductController@getCart']);
 

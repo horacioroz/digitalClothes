@@ -124,4 +124,13 @@ class ImageController extends Controller
             return response()->json(['error' => 'invalid'], 400);
         }
     }
+    public function productImageRetrive{
+         forelse($images as $image)
+               if($image->product_id==$product->id && $image->active==1)
+               $retrivedImages->add($image)
+            endif
+            empty
+            <p>No hay fotos seleccionadas.</p>
+            endforelse
+    }
 }

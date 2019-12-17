@@ -12,7 +12,7 @@
         <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="{{url('product_list')}}">Listado</a>
-          <a class="dropdown-item" href="{{url('product_edit')}}">Editar</a>
+          <a class="dropdown-item" href="{{route('product_create')}}">Crear</a>
           <a class="dropdown-item" href="{{url('art_list')}}">Listado Web</a>
         </div>
       </li>

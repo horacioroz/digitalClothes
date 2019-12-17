@@ -1,22 +1,29 @@
 .shp_container{
     padding: 2%;
     display: flex;
+    justify-content: flex-start;
+
 }
 .shp_main{
     display: flex;
-    justify-content: space-around;
+
 }
 .shp_left{
     display: flex;
-    height: 20vh;
-    border: solid 0.05em #434343;
-    margin-right: 0;
+    /*height: 20vh;*/
+    width: 60%
+
+}
+.list-group-item{
+    padding-left: 1%;
 
 }
 .shp_art{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: solid 0.06em #434343;
+    marging-bottom: 2% !important;
 }
 .shp_art img{
     width: 10%;
@@ -25,11 +32,13 @@
 }
 .shp_art_desc{
     width: 30%;
-    font-size: 0.5em
+    font-size: 0.5em;
 }
-.shp_art_desc{
-    line-height: 0.05em;
-}
+p{
+    line-height: 2%;
+    padding: 0;
+    }
+
 .shp_art_name{
     font-size: 1.3em;
     font-weight: bold;
@@ -46,7 +55,8 @@
     margin-right: 3em;
 }
 .shp_price{
-    width:10%;
+    width:20%;
+
 }
 .shp_price_offer{
     font-weight: bold;

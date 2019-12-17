@@ -27,7 +27,7 @@
                         document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt">{{ __('Logout') }}</i>
                     </a>
-                    <a href="{{url('shpCrt')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
+                    <a href="{{url('shopping_Cart')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
                         <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                     </a>
                     <p>Bienvenido {{ Auth::user()->firstName }}</p>

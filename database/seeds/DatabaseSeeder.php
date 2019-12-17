@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder{
          $this->truncateTables([
              'users',
              'products',
-             'categories'
-             'colors'
+             'categories',
+             'colors',
              'sizes'
          ]);
 

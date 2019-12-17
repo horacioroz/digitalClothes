@@ -24,36 +24,52 @@ class ProductController extends Controller
      * @param  \App\category  $category
      * @return \Illuminate\Http\Response
      */
-        public function edit(Product $id){
-            $products = Product::all();
-            $product = Product::findOrFail($id);
-            $prodcolor= Color::pluck('color_name','id');
 
-            $images = Image::all('image_name','product_id' );
-
-
-            return view('product_edit',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
-        }
-
-       public function save(Request $request){
+       public function create(Request $request){
+        // $categories = Category::all();
+        // $product = "";
 
         $rules = [
             'name'=> 'required',
             'category' => 'required|numeric',
-            'price' => 'numeric',
-            'discount_porcent' => 'numeric'
+            'price' => 'numeric'|'trim',
+            'discount_porcent' => 'numeric'|'trim'
         ];
         $msg = [
             'name.required' => 'Este campo :attribute es requerido...',
             'required' => 'Este campo :attribute es requerido...',
             'numeric' => 'Ingrese en este campo :attribute sólo números...',
         ];
-
+        if($request = ""){
         $this->validate($request,$rules,$msg);
         $product = new Product($request->all());
-        $product->save();
-        return  redirect('/product');
-    }
+
+        $product->create();
+         // return view('product_create',compact('prodcolor'))->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
+        return  view('product_create')
+        ->with('categories',Category::all())
+                    ->with('colors',Color::all())
+                    ->with('sizes',Size::all())
+                    ->with('products',Product::all()) ;}
+        else{
+        return  view('product_create')
+                    ->with('categories',Category::all())
+                    ->with('colors',Color::all())
+                    ->with('sizes',Size::all())
+                    ->with('products',Product::all()) ;
+        }
+        }
+
+        public function edit(Product $id){
+            $products = Product::all();
+            $product = Product::findOrFail($id);
+            $prodcolor= Color::pluck('color_name','id');
+            $images = Image::all('image_name','product_id' );
+
+
+            return view('product_edit',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
+        }
+
     public function index(){
         $title = 'Listado de Productos';
 
@@ -106,10 +122,14 @@ class ProductController extends Controller
 
     public function update(Request $request ){
         $product = Product::findOrFail($request->id);
-        // dd($request);
+        // $request->price = doubleval($request->price);
+        // $request->price = floatval(number_format(floatval($request->price), 2, ".", "," ));
+        // dd($request->price);
+
         $product->update($request->all());
 
-        return redirect()->route('product_edit');
+        // return redirect()->route('product_edit');
+        return back();
 
     }
     public function getAddToCart(Request $request, $id){
@@ -118,19 +138,44 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
         $request->session()->put('cart', $cart);
-        return redirect()->route('art_list_new');
+        return redirect()->back();
+        // return redirect()->route('art_list_new');
     }
     public function getCart() {
+        // $products =  Product::all();
+        if(!Session::has('cart')){
+            return view('shoppingCart',['products' => null ]);
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        // dd($cart);
+        return view('shoppingCart',['products' => $cart->items, 'totalPrice' =>$cart->totalPrice ]);
+
+    }
+    public function getShowCart() {
         if(!Session::has('cart')){
             return view('shoppingCart',['products' => null ]);
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
 
+        return redirect()->view('shoppingCart')->with('cart', $cart);
+
     }
+        public function art_show(Product $id){
+            $products = Product::all();
+            $product = Product::findOrFail($id);
+            $prodcolor= Color::pluck('color_name','id');
+            $images = Image::all('image_name','product_id' );
+
+
+            return view('art_view_newest',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
+        }
+
 
 
 }
+
 
 
 // Desde acá
@@ -175,17 +220,17 @@ class ProductController extends Controller
 //      *
 //      * @return \Illuminate\Http\Response
 //      */
-//     public function create(Request $request)
-//     {
-//             $request->all();
-//             $this->validate($request,
-//                 ['category_name'=>'required'],
-//                 ['category_name.required'=>'Debe ingresar el Nombre']);
-//             $category = new Category($request->all());
-//             $category->save();
+    //     public function create(Request $request)
+    // {
+    //         $request->all();
+    //         $this->validate($request,
+    //             ['category_name'=>'required'],
+    //             ['category_name.required'=>'Debe ingresar el Nombre']);
+    //         $category = new Category($request->all());
+    //         $category->save();
 
-//             return redirect('category_create');
-//     }
+    //         return redirect('category_create');
+    // }
 
 //     /**
 //      * Store a newly created resource in storage.

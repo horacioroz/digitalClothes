@@ -15,13 +15,13 @@
         <article   class="">
             <div id="carouselExampleIndicators" class="carousel slide jm_lista_vista_slider " data-touch="true" data-interval="0">
                 <ol class="carousel-indicators " >
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
 
             @forelse($product->images as $image)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     @if($image->product_id==$product->id && $image->active==1)
                     {{-- @dd($image->product_id); --}}
                     <div class="art_list_photo carousel-item active"><img src="{{url('storage/images/products', $image->image_name)}}" alt="imagen producto">

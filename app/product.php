@@ -10,7 +10,7 @@ use App\Image;
 class Product extends Model
 
 {
-    protected $fillable = ['name', 'description', 'category_id', 'price', 'discount_porcet','active'];
+    protected $fillable = ['name', 'description', 'category_id', 'price', 'discount_porcent','active'];
 
     public function category(){
         return $this->belongsTo("App\Category","id");

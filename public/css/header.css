@@ -48,8 +48,21 @@
     background: #000;
 }
 .login-cart{
+    display: flex;
     display: inline-flex;
     padding-top: 1vh;
+}
+.login-cart a{
+    display: inline-flex;
+}
+.login-cart span{
+    width: 20%;
+    color:white;
+    background-color: black;
+
+}
+.login-cart i{
+    width: 60%;
 }
 @media only screen and (min-width: 320px) and (max-width: 479px){
     .header{
