@@ -123,9 +123,9 @@
     display: inline-flex;
 
 }
-#price:before{
+/*#price:before{
     content:'$ ';
-}
+}*/
 
 
 

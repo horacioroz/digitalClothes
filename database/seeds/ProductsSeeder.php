@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProductSeeder extends Seeder
+class ProductsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,10 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $product = factory(App\Product::class, 50)->create();
+        factory(App\Product::class, 50)->create()->each(function ($product) {
+            $product->images()->save(factory(App\Image::class)->make());
+            $product->images()->save(factory(App\Image::class)->make());
+            $product->images()->save(factory(App\Image::class)->make());
+        });
     }
 }

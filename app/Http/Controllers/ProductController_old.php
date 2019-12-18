@@ -87,13 +87,10 @@ class ProductController extends Controller
         $title = 'Listado de Productos';
 
         $products = Product::with([
-            'images' => function ($q) {
-                return $q->where('active', 1);
-            },
-            'colors',
-        ])->paginate(11);
-
-//        dd($products->toArray());
+            'colors' => function ($q) {
+                return $q;
+            }
+        ])->get();
 
         return view('art_list_new')->with('products', $products)
         ->with('title', 'Listado de productos')
@@ -136,10 +133,11 @@ class ProductController extends Controller
 
     }
     public function getAddToCart(Request $request, $id){
+        // dd($request);
         $product =  Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
+        $cart->add($product, $product->id, $product->color, $product->size);
         $request->session()->put('cart', $cart);
         return redirect()->back();
         // return redirect()->route('art_list_new');

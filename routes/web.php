@@ -91,7 +91,7 @@ Route::post('product_image_store/{id}', 'ImageController@productImageStore')->na
 //shoppingCart Routes
 // Route::get('/shoppingCart', [ 'as' => 'shoppingCart', 'uses' => 'ProductController@getCart']);
 // Route::get('/shpCrt', function(){return view('shoppingCart');});
-Route::get('/add_to_cart/{id}', [ 'as' => 'product.addToCart', 'uses' => 'ProductController@getAddToCart']);
+Route::post('/add_to_cart/{id}', [ 'as' => 'product.addToCart', 'uses' => 'ProductController@getAddToCart']);
 Route::get('/shopping-cart', [ 'as' => 'product.shoppingCart', 'uses' => 'ProductController@getCart']);
 
 //contact Routes

@@ -20,13 +20,13 @@
                 </ol>
                 <div class="carousel-inner">
 
-
             @forelse($product->images as $image)
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <div class="art_list_photo carousel-item active">
-                        <img src="{{ Storage::url($image->image_name) }}" alt="imagen producto">
+                    @if($image->product_id==$product->id && $image->active==1)
+                    {{-- @dd($image->product_id); --}}
+                    <div class="art_list_photo carousel-item active"><img src="{{url('storage/images/products', $image->image_name)}}" alt="imagen producto">
                     </div>
-
+                    @endif
                     @empty
                     <p>No hay fotos seleccionadas.</p>
                     @endforelse
@@ -84,7 +84,7 @@
                     <p class="art_price" style = "color:red">Off  {{number_format( $product->discount_porcent, 2, ",", "." ) }}%</p>
                 </div>
                 <div class="art_cart_btn">
-                    <a href="{{ url ('/artic/{id}') }}" class="btn btn-register cart_btn " role="button"><i class="fas fa-shopping-cart">Ver Articulo</i></a>
+                    <a href="{{ url('artic',$product->id)}}" class="btn btn-register cart_btn " role="button"><i class="fas fa-shopping-cart">Ver Articulo</i></a>
                 </div>
                 <br>
 

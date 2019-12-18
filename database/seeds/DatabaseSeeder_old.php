@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder{
          ]);
 
         $this->call(UserTableSeeder::class);
-        $this->call(ProductsSeeder::class);
+        $this->call(ProductSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(ColorSeeder::class);
         $this->call(SizeSeeder::class);

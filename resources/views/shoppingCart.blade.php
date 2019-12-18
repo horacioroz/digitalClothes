@@ -23,13 +23,13 @@
                             </div>
                             <div class="shp_quant">
                                 <a href="#"><i class="fas fa-plus fa-align-center"></i></a>
-                                <input class="shp_quantity badge" type="text" name="qty" value="{{$product['qty']}}" placeholder="{{$product['qty']}}" >
+                                <input class="shp_quantity" type="text" name="qty" value="{{$product['qty']}}" placeholder="{{$product['qty']}}" >
                                 <a href="#"><i class="fas fa-minus fa-align-center"></i></a>
                             </div>
                             <div class="shp_price">
-                                <span class="shp_price_offer label label-success">$ {{$product['item']['price']*(1-$product['item']['discount_porcent']/100)}}</span>
-                                <span class="shp_price_regular label label-success">$ {{$product['item']['price']}}</span>
-                                <span class="shp_price_save label label-success">{{$product['item']['discount_porcent']}} %</span>
+                                <span class="shp_price_offer label label-success">$ {{number_format( $product['item']['price']*(1-$product['item']['discount_porcent']/100), 2, ",", "." )}}</span>
+                                <span class="shp_price_regular label label-success">   $ {{number_format( $product['item']['price'], 2, ",", "." ) }}</span>
+                                <span class="shp_price_save label label-success">{{number_format( $product['item']['discount_porcent'], 2, ",", "." ) }} %</span>
                             </div>
                         </li>
                     </article>
