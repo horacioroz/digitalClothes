@@ -15,7 +15,7 @@ use App\Http\Requests\UploadRequest;
 use Illuminate\Support\Facades\DB;
 
 
-class ProductController extends Controller
+class ProductControllerOld extends Controller
 {
 
     /**

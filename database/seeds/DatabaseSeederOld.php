@@ -4,7 +4,7 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder{
+class DatabaseSeederOld extends Seeder{
     /**
      * Seed the application's database.
      *
@@ -37,4 +37,3 @@ class DatabaseSeeder extends Seeder{
 /*DESACTIVA REVISION DE FOREING KEYS EN LA BASE DE DATOS*/
 //elimina los datos de la tabla antes de generar los nuevos seeds, toma las tablas del array de arriba y las elimina una por una
 /*ACTIVA REVISION DE FOREING KEYS EN LA BASE DE DATOS*/
-

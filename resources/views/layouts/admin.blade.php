@@ -11,7 +11,8 @@
 
         @include('header')
         @include('navadmin')
-        <div class="container col-12" style="width:100%;padding:0;margin:0 auto;">
+        <div class="container col-12 text-center" style="width:100%;padding:0;margin:0 auto;">
+            <h1 class="mt-5 mb-5">Panel de control Administrador</h1>
             @yield('content')
             @yield('scripts')
 

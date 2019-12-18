@@ -11,32 +11,42 @@
                     <input class="form-control " type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success " type="submit">Go</button>
                 </form>
-                <div class="login-cart">
+                <div class="container-fluid row login-cart">
                     <!-- Authentication Links -->
+                    <ul>
+
+
                     @guest
-                    <a href="{{route('login')}}"><i class="fas fa-sign-in-alt">  {{ __('Login') }}</i></a>
+                      
+                  <li>  <a class="" href="{{route('login')}}"><i class="fas fa-sign-in-alt">  {{ __('Login') }}</i></a> </li>
                     @if (Route::has('signup'))
-                    <a href="{{route('signup')}}"><i class="fas fa-user-plus">  {{ __('Sign up') }}</i></a>
-                    <a href="{{ route('product.shoppingCart')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
+                  <li>   <a class="" href="{{route('signup')}}"><i class="fas fa-user-plus">  {{ __('Sign up') }}</i></a></li>
+                  <li>   <a class="mt-1" href="{{ route('product.shoppingCart')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
                         <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                    </a>
+                    </a></li>
                     @endif
                     @else
                     <div class="login-cart" >
-                        <a  href="{{ route('logout') }}"  onclick="event.preventDefault();
+                  <li>       <a  class="mt-1" href="{{ route('logout') }}"  onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt">{{ __('Logout') }}</i>
-                    </a>
-                    <a href="{{url('shopping_Cart')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
+                    </a> </li>
+                <li>     <a class="mt-1" href="{{url('shopping_Cart')}}"><i class="fas fa-shopping-cart"> Carrito</i>
                         <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                    </a>
-                    <p>Bienvenido {{ Auth::user()->firstName }}</p>
-                    <a href="{{url('user_profile', Auth::user()->id)}}">Profile</a>
+                    </a> </li>
+                  <li>   <p class="mt-3">Bienvenido {{ Auth::user()->firstName }}</p> </li>
+                  <li>   <a class="mt-1" href="{{url('user_profile', Auth::user()->id)}}">Profile</a> </li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
+                    @if (Auth::user()-> email =="juanimeliausa@gmail.com")
+                  <li>     <a class="mt-1" href={{url('admin')}}>Panel admin</a> </li>
+                    @endif
+                    </ul>
                 </div>
-                @endguest
+
+
+              @endguest
             </div>
         </article>
     </section>

@@ -349,16 +349,6 @@ hr{
 }
 
 /*PRODUCTS*/
-
-.product_list_titles{
-    width: 80%;
-    background-color: black;
-    color:white;
-    display: flex;
-    /*justify-content: center;*/
-    height: 2%;
-
-}
 .product_list_titles p{
     flex-direction: row;
     flex-wrap: wrap;
@@ -475,5 +465,3 @@ p .price{
     width: 10%
 
 }
-
-
