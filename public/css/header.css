@@ -8,7 +8,7 @@
 }
 
 .header_hoverlinks:hover{
-  text-decoration: underline;
+  color: gray;
 }
 
 .header-in{
