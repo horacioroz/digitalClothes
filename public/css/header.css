@@ -3,6 +3,14 @@
     height:17vh;
     display: flex;
 }
+.header_hoverlinks{
+  font-weight: 600;
+}
+
+.header_hoverlinks:hover{
+  text-decoration: underline;
+}
+
 .header-in{
     display: flex;
     height: 15vh;

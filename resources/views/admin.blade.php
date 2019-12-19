@@ -5,7 +5,6 @@
 
 
 
-@include('banner')
+    
     @yield('scripts')
 @endsection
-

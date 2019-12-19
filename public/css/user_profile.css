@@ -76,11 +76,7 @@
 // .user_profile_avatar img{
 //     border-radius: 100%;
 // }*/
-*{
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .form-user-edit{
     display:flex;
     flex-wrap: wrap;
@@ -94,7 +90,13 @@
 }
 .form-group-edit{
   margin-top: 0%;
+  padding: 4%;
   width: 30%;
+}
+
+.user_profile_botton article a{
+  color: white;
+  text-decoration: none;
 }
 .container-register-edit{
   margin-top: 2 %;
@@ -111,9 +113,9 @@ display: flex;
   font-size: 1.1vw;
 }
 .maincontainer-register p.data {
-  border: 0;
-  border-bottom: solid black 1px;
-  border-radius: 0;
+  padding: 5%;
+  border-bottom: 1px solid black;
+
 }
 .btn-register {
     color: #fff;

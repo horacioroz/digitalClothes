@@ -24,7 +24,7 @@
             @forelse($product->images as $image)
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <div class="art_list_photo carousel-item active">
-                        <img src="{{ asset(images/products/$image->image_name) }}" alt="imagen producto">
+                        <img src="{{ Storage::url($image->image_name) }}" alt="imagen producto">
                     </div>
 
 

@@ -58,6 +58,10 @@ li{
     color: white;
     font-size: 1em;
 }
+
+.footer-links a:hover{
+text-decoration: underline;
+}
 .footer-links p{
     font-weight: bold;
     margin-top: 1em;
