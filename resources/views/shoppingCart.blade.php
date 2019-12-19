@@ -27,7 +27,9 @@
                                 <a href="#"><i class="fas fa-minus fa-align-center"></i></a>
                             </div>
                             <div class="shp_price">
-                                <span class="shp_price_offer label label-success">$ {{number_format( $product['item']['price']*(1-$product['item']['discount_porcent']/100), 2, ",", "." )}}</span>
+                                <span class="shp_price_offer label label-success">
+                                    $ {{$product['item']->price_with_discount}}
+                                </span>
                                 <span class="shp_price_regular label label-success">   $ {{number_format( $product['item']['price'], 2, ",", "." ) }}</span>
                                 <span class="shp_price_save label label-success">{{number_format( $product['item']['discount_porcent'], 2, ",", "." ) }} %</span>
                             </div>

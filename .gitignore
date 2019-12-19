@@ -1,8 +1,12 @@
 /node_modules
 /public/hot
 /public/storage
-/storage/app/public/images/users
-/storage/app/public/images/products
+/storage/app/public/images/users/*.png
+/storage/app/public/images/users/*.jpg
+/storage/app/public/images/users/*.jpeg
+/storage/app/public/images/products/*.png
+/storage/app/public/images/products/*.jpg
+/storage/app/public/images/products/*.jpeg
 /storage/*.key
 /vendor
 .env

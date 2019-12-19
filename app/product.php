@@ -12,6 +12,10 @@ class Product extends Model
 {
     protected $fillable = ['name', 'description', 'category_id', 'price', 'discount_porcent','active'];
 
+    protected $append = [
+        'price_with_discount',
+    ];
+
     public function category(){
         return $this->belongsTo("App\Category","id");
     }
@@ -25,5 +29,13 @@ class Product extends Model
     }
     public function images(){
         return $this->hasMany("App\Image", "product_id");
+    }
+
+    public function getPriceWithDiscountAttribute()
+    {
+        return number_format(
+            $this->attributes['price'] * (1 - $this->attributes['discount_porcent'] / 100),
+            2, ",", "."
+        );
     }
 }

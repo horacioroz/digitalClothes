@@ -4,7 +4,8 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder{
+class DatabaseSeeder_old
+ extends Seeder{
     /**
      * Seed the application's database.
      *
