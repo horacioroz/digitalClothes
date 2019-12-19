@@ -12,11 +12,11 @@
     <ul>
         @forelse($users as $user)
         {{-- <li>{{$user}}</li> --}}
-        <li class="user_list_row">
-            <p class="user_list_item id">{{ $user->id}}</p>
-            <p class="user_list_item">{{ $user->firstName}}</p>
-            <p class="user_list_item">{{$user->lastName}}</p>
-            <p class="user_list_item">{{$user->email}}</p>
+        <li class="product_list_row">
+            <p class="product_list_item id p-2">{{ $user->id}}</p>
+            <p class="product_list_item">{{ $user->firstName}}</p>
+            <p class="product_list_item">{{$user->lastName}}</p>
+            <p class="product_list_item">{{$user->email}}</p>
         </li>
         <hr>
         @empty

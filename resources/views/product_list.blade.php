@@ -2,19 +2,19 @@
 @section('content')
   <h1>{{ $title }}</h1>
   <br>
-  <div class="product_list_row  font-weight-bold ">
+  {{-- <div class="product_list_row  font-weight-bold ">
       <p class="id">Id</p>
       <p>Nombre</p>
       {{-- <p>Descripción</p> --}}
-      <p>Categoría</p>
+      {{-- <p>Categoría</p>
       {{-- <p>Colores</p> --}}
       {{-- <p>Talles</p> --}}
-      <p>Precio</p>
+      {{-- <p>Precio</p>
       <p>Descuento</p>
       <p class="eae">Editar</p>
       <p class="eae">Activar</p>
       <p class="eae">Eliminar</p>
-  </div>
+  </div>  --}}
   <ul>
       @forelse($products as $product)
       @if($product->active == 1)
