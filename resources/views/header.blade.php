@@ -39,7 +39,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    @if (Auth::user()-> email =="juanimeliausa@gmail.com")
+                    @if (Auth::user()-> email =="juanimeliausa@gmail.com" || "digitalClothes@gmail.com")
                   <li>     <a class="mt-1 header_hoverlinks" href={{url('product_list')}}>Panel admin</a> </li>
                     @endif
                     </ul>
