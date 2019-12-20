@@ -17,7 +17,7 @@
                                 <img src="{{ asset('images/foto_1.jpg') }}" alt="imagen foto 1" >
                                 <div class="shp_art_desc">
                                 </div>
-                                <p>Color: Celeste</p>
+                                <p>Color: {{$product['item']['color']}}</p>
                                 <p>Talle: 38 Regular</p>
                                 <p>Item#: {{$product['item']['id']}}</p>
                             </div>

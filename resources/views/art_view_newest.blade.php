@@ -16,6 +16,7 @@
             @forelse($images as $image)
             @if($image->product_id==$product->id && $image->active==1)
             <div class="column_art_img">
+                {{-- <img src="{{url('storage/images/products',$img)}}" alt=""> --}}
                 <a href="" class="column_art_view_a"><img src="{{url('storage/images/products', $image->image_name)}}" alt="imagen producto"></a>
             </div>
             @endif
@@ -34,13 +35,15 @@
         <h2 id="price">$  {{number_format( $product->price, 2, ",", "." ) }}</h2>{{-- si hay problemas al cargar el carrito con el precio hay que sacarle el formato --}}
         <h2 style = "color:red">Off  {{number_format( $product->discount_porcent, 2, ",", "." ) }}%</h2>
         </div>
-        <p class="div-art-view">Descripcion</p>
-        <p>{{$product->description}}</p>
+        <div class="descrip">
+        <label for="description">Descripcion</label>
+        <p class="div-art-view">{{$product->description}}</p>
+        </div>
         <form class="" action="{{route ('product.addToCart',['id'=> $product->id])}}" method="post">
             @csrf
              <div class="form-group-edit form-group ">
                     <label for="color">Color</label>
-                    {!!Form::select('color.color_id', $colors->pluck('color_name'), array('class'=>'product_category_id_ul selectpicker form-control color_selected', 'name' => 'colors'))!!}
+                    {!!Form::select('color.color_id', $colors->pluck('color_name'), array('class'=>'product_category_id_ul selectpicker form-control color_select', 'name' => 'colors'))!!}
                     {{-- @dd($colors->pluck('color_id')); --}}
                                     </div>
             <div class="form-group-edit  form-group ">

@@ -14,6 +14,7 @@ class Product extends Model
 
     protected $append = [
         'price_with_discount',
+        'image_art_list',
     ];
 
     public function category(){
@@ -38,4 +39,6 @@ class Product extends Model
             2, ",", "."
         );
     }
+
+
 }

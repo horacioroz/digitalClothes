@@ -15,7 +15,7 @@ use App\Http\Requests\UploadRequest;
 use Illuminate\Support\Facades\DB;
 
 
-class ProductController extends Controller
+class ProductController_old extends Controller
 {
 
     /**
@@ -173,9 +173,10 @@ class ProductController extends Controller
             return view('art_view_newest',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
         }
 
-
-
 }
+
+
+
 
 
 

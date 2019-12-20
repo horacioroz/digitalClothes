@@ -139,7 +139,12 @@ class ProductController extends Controller
         $product =  Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
+        $color = $request->color_color_id+1;
+        $size = $request->size_size_id+1;
+        $cart->add($product, $product->id, $color, $size);
+        // dd($color, $size);
+        // dd($request);
+        // dd($cart);
         $request->session()->put('cart', $cart);
         return redirect()->back();
         // return redirect()->route('art_list_new');
@@ -175,6 +180,32 @@ class ProductController extends Controller
             return view('art_view_newest',compact('prodcolor'))->with('product', $id)->with('categories', Category::all())->with('colors', Color::all())->with('sizes', Size::all())->with('images',Image::all());
         }
 
+    //     public function getProductImage(){
+
+    //         foreach($images as $image){
+    //             if($image->product_id==$product->id && $image->active==1 && $image[0]){
+    //                 $img =  $image->image_name;
+    //                 return  $img;
+    //         }
+    //     }
+
+    // }
+     public function getImageArtList()
+    {
+        foreach($product->images as $image){
+            dd($product->image);
+            if($image->product_id==$product->id && $image->active==1){
+               $storedItemImage =['image' => $image->image_name];
+               dd($storedItemImage);
+                    $img = $storedItemImage->image;
+                    return $img;}
+                    else{
+                        $img = 'No hay imágenes cargadas';
+                        return $img;
+                    }
+
+        }
+    }
 
 
 }

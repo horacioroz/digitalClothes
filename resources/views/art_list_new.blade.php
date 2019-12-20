@@ -21,19 +21,16 @@
                 <div class="carousel-inner">
 
 
-            @forelse($product->images as $image)
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <div class="art_list_photo carousel-item active">
-                        <img src="{{ Storage::url($image->image_name) }}" alt="imagen producto">
+             @forelse($product->images as $image)
+                    {{-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> --}}
+                    @if($image->product_id==$product->id && $image->active==1)
+                    {{-- @dd($image->product_id); --}}
+                    <div class="art_list_photo carousel-item active"><img src="{{url('storage/images/products', $image->image_name)}}" alt="imagen producto">
                     </div>
-
+                    @endif
                     @empty
                     <p>No hay fotos seleccionadas.</p>
                     @endforelse
-
-
-
-
               </div>
               <a class="carousel-control-prev  " href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon " aria-hidden="true"></span>
@@ -71,7 +68,6 @@
                 @endforeach
                 </div>
 <h6>Talles :</h6>
-
                 <div class="art_list_item_colors">
                     @foreach ($product->sizes as $size)
                     <div class="art_list_colors_each">
@@ -84,7 +80,7 @@
                     <p class="art_price" style = "color:red">Off  {{number_format( $product->discount_porcent, 2, ",", "." ) }}%</p>
                 </div>
                 <div class="art_cart_btn">
-                    <a href="{{ url ('/artic/{id}') }}" class="btn btn-register cart_btn " role="button"><i class="fas fa-shopping-cart">Ver Articulo</i></a>
+                    <a href="{{ url ('/artic',$product->id) }}" class="btn btn-register cart_btn " role="button"><i class="fas fa-shopping-cart">Ver Articulo</i></a>
                 </div>
                 <br>
 
@@ -102,3 +98,5 @@
 
 
 @endsection
+{{--
+<div class="art_list_photo carousel-item active"><img src="{{ route('art_list_images')}}" alt="imagen producto"> --}}

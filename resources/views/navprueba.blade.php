@@ -60,7 +60,7 @@
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link " href="{{url('contact')}}" id="navbarMenuLink" >
+        <a class="nav-link " href="{{route('contact')}}" id="navbarMenuLink" >
           Contact Us
         </a>
     </li>

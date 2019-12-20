@@ -24,14 +24,18 @@
                     @else
                     <div class="login-cart" >
                         <a  href="{{ route('logout') }}"  onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
+                        document.getElementById('logout-form').submit();" id="logout">
                         <i class="fas fa-sign-out-alt">{{ __('Logout') }}</i>
                     </a>
                     <a href="{{url('shopping_Cart')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
                         <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                     </a>
-                    <p>Bienvenido {{ Auth::user()->firstName }}</p>
+                    <div class="welcome">
+                    <p>Bienvenido </p><p>{{ Auth::user()->firstName }}</p>
+                    </div>
+                    <div class="goToProfile">
                     <a href="{{url('user_profile', Auth::user()->id)}}">Profile</a>
+                    </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>

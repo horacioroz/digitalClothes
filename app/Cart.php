@@ -10,6 +10,8 @@ class Cart{
     public $items = null;//Son grupos de productos, agrupa los productos similares
     public $totalQty = 0;
     public $totalPrice = 0;
+    public $color = null;
+    public $size = null;
 
     public function __construct($oldCart){
         if ($oldCart){
@@ -20,14 +22,27 @@ class Cart{
     //dd($oldCart);
     }
 
-    public function add($item, $id){
-        $storedItem = [ 'qty' => 0, 'price' => $item->price, 'color' => $item->color, 'size' => $item->size,
-         'item' => $item];//storedItem es el grupo de items a los cuales me refiero, ésta línea es para crearlo si no lo tengo
+    public function add($item, $id, $color, $size)
+    {
+        // $product = $this->findProduct($id);
+
+
+        $storedItem = [
+            'qty' => 0,
+            'price' => $item->price,
+            'color' => $color,
+            'size' => $size,
+            'item' => $item,
+        ];
+        //storedItem es el grupo de items a los cuales me refiero, ésta línea es para crearlo si no lo tengo
+
         if($this->items){//aquí chequeo si hay items en el carrito
             if(array_key_exists($id, $this->items)){//aquí si de los que hay está incluido el que quiero agregar
                 $storedItem = $this->items[$id];//si está asocia el item al array de ese artículo ya incluido
             }
+            //Hay que agregar la lógica para que considere un artículo distinto cunado no tiene el mismo talle o mismo color.
         }
+
         $storedItem['qty']++;//aquí sumamos un artículo
         $storedItem['price'] = $item->price * $storedItem['qty'];//
         //dd($storedItem);
@@ -36,4 +51,33 @@ class Cart{
         $this->totalPrice += $item->price;
 
     }
+
+    // private function findProduct($id)
+    // {
+    //     foreach ($this->data as $product) {
+    //         return $product['id'] == $id;
+    //     }
+    // }
+
+    // private function getBaseItem()
+    // {
+    //     return [
+    //         'item' => null,
+    //         'variants' => [
+    //             // ["color" => '', "size" => '', "qty" => 0]
+    //         ]
+    //     ];
+    // }
+
+    // private function storeItem($productId, $color, $size, $qty = 1)
+    // {
+    //     return [
+    //         'product_id' => $productId,
+    //         'variants' => [
+    //             'color' => $color,
+    //             'size' => $size,
+    //             'qty' => $qty
+    //         ]
+    //     ];
+    // }
 }

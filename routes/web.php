@@ -31,6 +31,7 @@ Auth::routes();
 // Route::get('/artic/{id}', function(){return view('art_view_new');});
 Route::get("/artic/{id}",'ProductController@art_show')->name('art_view_newest');
 Route::get('/art_list', [ 'as' => 'art_list_new', 'uses' => 'ProductController@artList']);
+Route::get('/storage/images/products/{img}', [ 'as' => 'art_list_images', 'uses' => 'ProductController@getImageArtList']);
 
 
 //User Routes
