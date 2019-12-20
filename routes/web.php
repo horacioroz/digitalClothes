@@ -16,7 +16,7 @@ Route::get('/home', function () {return view('home');});
 Route::get('/admin', function () {return view('admin');});
 Route::get('/login', function(){return view('login');});
 Route::post('/login', function(){return view('login');});
-Route::get('/signup', "ProductController@signup");
+Route::get('/signup', function(){return view('auth/register');});
 //Route::get('/profile', function(){return view('user_profile');});;
 //Route::get('/users_list', function(){return view('users_list');});
 Route::get('/chpsw', function(){return view('changepassword');});
@@ -37,8 +37,8 @@ Route::get('/storage/images/products/{img}', [ 'as' => 'art_list_images', 'uses'
 //User Routes
 
 Route::post('logout', 'UserController@logout')->name('logout');
-Route::post('/signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@signup']);
-Route::post('signup', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@store']);
+Route::post('/signupDos', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@signup']);
+Route::post('/signupDos', [ 'as' => 'signup', 'uses' => 'Auth\RegisterController@store']);
 Route::get('/users_list', [ 'as' => 'users_list', 'uses' => 'UserController@index']);
 Route::get('user_profile/{id}',['as' => 'profile', 'uses' => 'UserController@userProfile']);
 Route::get('user_profile_edit/{id}','UserController@userEdit')->name('profile_edit');

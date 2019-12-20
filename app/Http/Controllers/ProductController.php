@@ -60,12 +60,6 @@ class ProductController extends Controller
         }
         }
 
-        public function signup(Request $request){
-          $reglas = [
-            "password" => "string |min:8"
-          ];
-
-        }
         public function edit(Product $id){
             $products = Product::all();
             $product = Product::findOrFail($id);
