@@ -3,6 +3,14 @@
     height:17vh;
     display: flex;
 }
+.header_hoverlinks{
+  font-weight: 600;
+}
+
+.header_hoverlinks:hover{
+  color: gray;
+}
+
 .header-in{
     display: flex;
     height: 15vh;
@@ -13,15 +21,6 @@
 }
 .header h1{
     color:brown;
-}
-#logout{
-    width: 30%;
-}
-.goToProfile{
-    width: 20%;
-}
-.welcome{
-    width: 55%;
 }
 #logo{
     width: 15%;

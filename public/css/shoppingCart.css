@@ -16,7 +16,12 @@
 }
 .list-group-item{
     padding-left: 1%;
+    display: flex;
 
+
+}
+.shp_item{
+    margin:2%;
 }
 .shp_art{
     display: flex;
@@ -24,10 +29,13 @@
     align-items: center;
     border: solid 0.06em #434343;
     marging-bottom: 2% !important;
+    padding: 1%;
+
 }
 .shp_art img{
-    width: 10%;
+    width: auto;
     height: 10vh;
+    align-items: flex-end;
 
 }
 .shp_art_desc{
@@ -67,6 +75,13 @@ p{
 .shp_price_save{
     color:red;
 
+}
+.shp_prod{
+    width: 40%;
+    height: auto;
+    margin:0;
+    display: flex;
+    justify-content: space-around;
 }
 .shp_right{
     display: flex;

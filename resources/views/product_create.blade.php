@@ -4,7 +4,7 @@
 <div class="maincontainer-register">
     <h1>Crear Producto</h1>
     <div class="col-12 col-md-8 container-register-edit">
-        <form class="form" id="frmTarget" method="POST" enctype="multipart/form-data" action='{{ "route('product_create')" }}'  novalidate id="mydropzone" >
+        <form class="form" id="frmTarget" method="POST" enctype="multipart/form-data" action="{{ route('product_create') }}  novalidate id="mydropzone" >
             {{-- {{method_field('PUT')}} --}}
             {!!csrf_field()!!}
             <div class="form-user-edit">
@@ -63,10 +63,10 @@
                     </div>
                 </div>
             {{-- PHOTO --}}
-                <div class="form-user-edit">
+                {{-- <div class="form-user-edit">
                     <div class="form-group-edit thumbs ">
                         <label for="prod_img">Foto</label>
-                    {{-- AGREGADO PARA DROPZONE --}}
+                    AGREGADO PARA DROPZONE
                         <div class="container">
                             <div class="row"  >
                                 <div class="panel panel-primary">
@@ -77,14 +77,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             <button class=" btn btn-register " type="submit" id="sbmtbtn">Guardar</button>
         </form>
     </div>
 </div>
 @endsection
     @section('scripts')
-    <script>
+    {{-- <script>
         Dropzone.options.myDropzone = {
             url: '{{ route('product_image_store',$product->id) }}',
             addRemoveLinks: true,
@@ -92,6 +92,6 @@
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             }
         }
-    </script>
+    </script> --}}
     @endsection
 

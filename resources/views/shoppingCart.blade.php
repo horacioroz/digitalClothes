@@ -8,18 +8,18 @@
         <section class="shp_left col-xs-12 col-xl-7">
                 <ul class="list-group">
         @foreach($products as $product)
-            <div class="row">
+            <div class="row shp_item">
                     {{-- @dd($products); --}}
                     <article class="shp_art">
                         <li class="list-group-item">
-                            <div>
+                            <div class="shp_prod">
                                 <strong>{{$product['item']['name']}}</strong>
                                 <img src="{{ asset('images/foto_1.jpg') }}" alt="imagen foto 1" >
                                 <div class="shp_art_desc">
-                                </div>
                                 <p>Color: {{$product['item']['color']}}</p>
                                 <p>Talle: 38 Regular</p>
                                 <p>Item#: {{$product['item']['id']}}</p>
+                                </div>
                             </div>
                             <div class="shp_quant">
                                 <a href="#"><i class="fas fa-plus fa-align-center"></i></a>
@@ -39,7 +39,7 @@
     @endforeach
             </ul>
     </section>
-    <section class="shp_right col-xs-12 col-xl-4">
+    <section class="     col-xs-12 col-xl-4">
         <div class="shp_right_square">
             <article class="shp_total_titles">
                 <p class="shp_total_subtot">Subtotal</p>
