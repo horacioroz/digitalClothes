@@ -3,11 +3,6 @@
 
 <div class="container-fuid main-container">
     <div class="art_list col-12 row p-1">
-        <div class="art_list_part1 col-3">
-
-        <h1>part 1 </h1>
-
-        </div>
         @forelse($products as $product)
         <div class="art_list_part2 col-3">
 

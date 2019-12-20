@@ -60,6 +60,12 @@ class ProductController extends Controller
         }
         }
 
+        public function signup(Request $request){
+          $reglas = [
+            "password" => "string |min:8"
+          ];
+
+        }
         public function edit(Product $id){
             $products = Product::all();
             $product = Product::findOrFail($id);
@@ -91,7 +97,7 @@ class ProductController extends Controller
                 return $q->where('active', 1);
             },
             'colors',
-        ])->paginate(11);
+        ])->paginate(12);
 
 //        dd($products->toArray());
 

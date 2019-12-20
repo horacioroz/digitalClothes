@@ -57,7 +57,6 @@
 }
 .login-cart{
     display: flex;
-    display: inline-flex;
     padding-top: 1vh;
 }
 .login-cart a{

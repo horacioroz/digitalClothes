@@ -13,14 +13,14 @@
                 </form>
                 <div class="container-fluid row login-cart">
                     <!-- Authentication Links -->
-                    <ul>
+                    <ul class="">
 
 
                     @guest
 
-                  <li>  <a class="" href="{{route('login')}}"><i class="header_hoverlinks fas fa-sign-in-alt">  {{ __('Login') }}</i></a> </li>
+                  <li>  <a  href="{{route('login')}}"><i class="header_hoverlinks fas fa-sign-in-alt">  {{ __('Login') }}</i></a> </li>
                     @if (Route::has('signup'))
-                  <li>   <a class="" href="{{route('signup')}}"><i class="header_hoverlinks fas fa-user-plus">  {{ __('Sign up') }}</i></a></li>
+                  <li>   <a  href="{{route('signup')}}"><i class="header_hoverlinks fas fa-user-plus">  {{ __('Sign up') }}</i></a></li>
                   <li>   <a class="mt-1" href="{{ route('product.shoppingCart')}}"><i class="fas fa-shopping-cart">  Shopping Cart</i>
                         <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                     </a></li>

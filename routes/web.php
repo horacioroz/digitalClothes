@@ -16,7 +16,7 @@ Route::get('/home', function () {return view('home');});
 Route::get('/admin', function () {return view('admin');});
 Route::get('/login', function(){return view('login');});
 Route::post('/login', function(){return view('login');});
-Route::get('/signup', function(){return view('auth/register');});
+Route::get('/signup', "ProductController@signup");
 //Route::get('/profile', function(){return view('user_profile');});;
 //Route::get('/users_list', function(){return view('users_list');});
 Route::get('/chpsw', function(){return view('changepassword');});
